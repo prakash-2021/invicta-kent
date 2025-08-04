@@ -1,0 +1,29 @@
+// Import the math module from Sass
+@use "sass:math";
+
+// Remove unit from a value (e.g., 16px -> 16)
+@function stripUnit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+// Convert pixel value to rem (based on 16px root font size)
+@function rem($pxValue) {
+  @return math.div(stripUnit($pxValue), 16) * 1rem;
+}
+
+// Define the minimum and maximum viewport widths for fluid scaling
+$min_width: 480px;
+$max_width: 1200px;
+
+// Generate a preferred clamp-style fluid value between min and max font size
+@function preferred(
+  $min-font,
+  $max-font,
+  $min-width: $min_width,
+  $max-width: $max_width
+) {
+  @return calc(
+    #{$min-font} + #{stripUnit($max-font - $min-font)} *
+      ((100vw - #{$min-width}) / #{stripUnit($max-width - $min-width)})
+  );
+}

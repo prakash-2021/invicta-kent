@@ -1,0 +1,7 @@
+@use "./styles/main.scss";
+
+body {
+  font-family: var(--font-geist-sans), sans-serif !important;
+  background-color: main.$primary-background;
+  color: main.$neutral-deep-blue;
+}

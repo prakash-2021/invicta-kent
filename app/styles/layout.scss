@@ -1,0 +1,68 @@
+@use "function" as *;
+@use "variable";
+
+// Base container layout with responsive max-width and padding
+.base {
+  &-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 rem(16);
+    padding-inline: rem(16);
+    width: 100%;
+
+    @media (min-width: 640px) {
+      padding: 0 rem(16);
+      max-width: rem(640);
+    }
+
+    @media (min-width: 768px) {
+      padding: 0 rem(16);
+      max-width: rem(720);
+    }
+
+    @media (min-width: 1024px) {
+      padding: 0 rem(16);
+      max-width: rem(896);
+    }
+
+    @media (min-width: 1280px) {
+      padding: 0 rem(16);
+      max-width: rem(1200);
+    }
+
+    @media (min-width: 1440px) {
+      padding: 0;
+      max-width: rem(1312);
+    }
+
+    @media (min-width: 1680px) {
+      max-width: rem(1440);
+    }
+  }
+}
+
+// Figure wrapper for media (image/video) with hidden overflow
+.base-figure {
+  position: relative;
+  overflow: hidden;
+}
+
+// Full-cover image inside a container (absolutely positioned)
+.base-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Responsive grid layout (4 columns on mobile, 12 on large screens)
+.base-grid {
+  display: grid;
+  column-gap: rem(16);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
