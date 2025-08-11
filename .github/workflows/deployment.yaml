@@ -1,0 +1,30 @@
+name: Development CI
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Specify the Node.js version you want to use
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Run Type Check
+        run: yarn check-types
+
+      - name: Run ESLint
+        run: yarn lint
+
+      # - name: Run Tests
+      #   run: yarn test --coverage
+
+      - name: Build project
+        run: yarn build
