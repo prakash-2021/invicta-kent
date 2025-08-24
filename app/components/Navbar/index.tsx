@@ -240,21 +240,26 @@ export const Navbar = () => {
               "items-center space-x-8 text-[#0e2040]"
             )}
           >
-            {/* Services */}
+            <Link
+              href="/company"
+              className="ik-misc--nav-link opacity-80 hover:opacity-100 transition-opacity"
+            >
+              Properties
+            </Link>
             <div
               className="relative"
               ref={menuRefs.services}
-              onMouseEnter={() => handleMouseEnter("services")}
-              onMouseLeave={() => handleMouseLeave("services")}
+              onMouseEnter={() => handleMouseEnter("tenet")}
+              onMouseLeave={() => handleMouseLeave("tenet")}
             >
               <button className="flex items-center gap-0.5 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
-                <span className="ik-misc--nav-link">Services</span>
+                <span className="ik-misc--nav-link">Tenet Services</span>
                 <BiChevronDown
                   size={20}
                   color="var(--color-deep-blue)"
                   className={twMerge(
                     "transition-transform duration-200",
-                    activeMenu === "services" ? "rotate-180" : ""
+                    activeMenu === "tenet" ? "rotate-180" : ""
                   )}
                 />
               </button>
@@ -262,18 +267,18 @@ export const Navbar = () => {
                 className={twMerge(
                   "w-[15.37rem]",
                   NAV_CLASS,
-                  activeMenu === "services"
+                  activeMenu === "tenet"
                     ? "opacity-100 scale-100 pointer-events-auto"
                     : "opacity-0 scale-90 pointer-events-none"
                 )}
               >
                 <div className="p-1 bg-white rounded-lg shadow-lg">
                   <Link href={"home"} className={NAV_ITEM_CLASS}>
-                    home
+                    Service 1
                   </Link>
 
                   <Link href={"home"} className={NAV_ITEM_CLASS}>
-                    home
+                    Service 2
                   </Link>
                 </div>
               </div>
@@ -283,17 +288,17 @@ export const Navbar = () => {
             <div
               className="relative"
               ref={menuRefs.products}
-              onMouseEnter={() => handleMouseEnter("products")}
-              onMouseLeave={() => handleMouseLeave("products")}
+              onMouseEnter={() => handleMouseEnter("landlord")}
+              onMouseLeave={() => handleMouseLeave("landlord")}
             >
               <button className="flex items-center gap-0.5 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
-                <span className="ik-misc--nav-link">Products</span>
+                <span className="ik-misc--nav-link">Landlord Services</span>
                 <BiChevronDown
                   size={20}
                   color="var(--color-deep-blue)"
                   className={twMerge(
                     "transition-transform duration-200",
-                    activeMenu === "products" ? "rotate-180" : ""
+                    activeMenu === "landlord" ? "rotate-180" : ""
                   )}
                 />
               </button>
@@ -301,7 +306,7 @@ export const Navbar = () => {
                 className={twMerge(
                   "w-[12.5rem]",
                   NAV_CLASS,
-                  activeMenu === "products"
+                  activeMenu === "landlord"
                     ? "opacity-100 scale-100 pointer-events-auto"
                     : "opacity-0 scale-90 pointer-events-none"
                 )}
@@ -316,57 +321,10 @@ export const Navbar = () => {
 
             {/* Projects */}
             <Link
-              href="/projects"
+              href="/company"
               className="ik-misc--nav-link opacity-80 hover:opacity-100 transition-opacity"
             >
-              Projects
-            </Link>
-
-            {/* Company */}
-            <div
-              className="relative"
-              ref={menuRefs.company}
-              onMouseEnter={() => handleMouseEnter("company")}
-              onMouseLeave={() => handleMouseLeave("company")}
-            >
-              <button className="flex items-center gap-0.5 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
-                <span className="ik-misc--nav-link">Company</span>
-                <BiChevronDown
-                  size={20}
-                  color="var(--color-deep-blue)"
-                  className={twMerge(
-                    "transition-transform duration-200",
-                    activeMenu === "company" ? "rotate-180" : ""
-                  )}
-                />
-              </button>
-              <div
-                className={twMerge(
-                  "w-[12.5rem]",
-                  NAV_CLASS,
-                  activeMenu === "company"
-                    ? "opacity-100 scale-100 pointer-events-auto"
-                    : "opacity-0 scale-90 pointer-events-none"
-                )}
-              >
-                <div className="p-1 bg-white rounded-lg shadow-lg">
-                  <Link href="/about" className={NAV_ITEM_CLASS}>
-                    About Us
-                  </Link>
-                  <Link href="/careers" className={NAV_ITEM_CLASS}>
-                    Career
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact */}
-
-            <Link
-              href="/contact"
-              className="ik-misc--nav-link opacity-80 hover:opacity-100 transition-opacity"
-            >
-              Contact
+              Company
             </Link>
           </div>
 
@@ -404,32 +362,45 @@ export const Navbar = () => {
         {/* Mobile Menu */}
         <div
           ref={navRef}
-          className="xl:hidden fixed top-0 left-0 w-full h-dvh  -z-1 border-b border-border overflow-y-auto -translate-y-full"
+          className="xl:hidden fixed top-0 left-0 w-full h-dvh -z-1 border-b border-border overflow-y-auto -translate-y-full"
         >
           {/* Mobile items */}
           <div className="flex flex-col space-y-2 pt-[64px]">
-            {/* Services */}
             <div
-              className="mx-4 border-b border-border"
               ref={(el) => {
                 listRefs.current[0] = el;
               }}
             >
+              <Link
+                href="/company"
+                className="mx-4 border-b border-border h-14 flex items-center ik-misc--nav-link"
+                onClick={toggleMenu}
+              >
+                Properties
+              </Link>
+            </div>
+            {/* Services */}
+            <div
+              className="mx-4 border-b border-border"
+              ref={(el) => {
+                listRefs.current[1] = el;
+              }}
+            >
               <button
-                onClick={() => toggleSubmenu("services")}
+                onClick={() => toggleSubmenu("tenet")}
                 className="w-full flex justify-between items-center h-14"
               >
-                <span className="ik-misc--nav-link">Services</span>
+                <span className="ik-misc--nav-link">Tenet</span>
                 <BiChevronDown
                   className={`transition-transform duration-500 ${
-                    activeMenu === "services" ? "rotate-180" : ""
+                    activeMenu === "tenet" ? "rotate-180" : ""
                   }`}
                   size={20}
                 />
               </button>
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeMenu === "services"
+                  activeMenu === "tenet"
                     ? "max-h-40 opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
@@ -440,7 +411,7 @@ export const Navbar = () => {
                     className="text-sm h-12 flex items-center ik-misc--nav-link"
                     onClick={toggleMenu}
                   >
-                    home
+                    lin1
                   </Link>
 
                   <Link
@@ -448,7 +419,7 @@ export const Navbar = () => {
                     className="text-sm h-12 flex items-center ik-misc--nav-link"
                     onClick={toggleMenu}
                   >
-                    home
+                    lin2
                   </Link>
                 </div>
               </div>
@@ -458,24 +429,24 @@ export const Navbar = () => {
             <div
               className="mx-4 border-b border-border"
               ref={(el) => {
-                listRefs.current[1] = el;
+                listRefs.current[2] = el;
               }}
             >
               <button
-                onClick={() => toggleSubmenu("products")}
+                onClick={() => toggleSubmenu("landlord")}
                 className="w-full flex justify-between items-center h-14"
               >
-                <span className="ik-misc--nav-link">Products</span>
+                <span className="ik-misc--nav-link">Landlord Service</span>
                 <BiChevronDown
                   className={`transition-transform duration-500 ${
-                    activeMenu === "products" ? "rotate-180" : ""
+                    activeMenu === "landlord" ? "rotate-180" : ""
                   }`}
                   size={20}
                 />
               </button>
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeMenu === "products"
+                  activeMenu === "landlord"
                     ? "max-h-40 opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
@@ -495,75 +466,15 @@ export const Navbar = () => {
             {/* Projects */}
             <div
               ref={(el) => {
-                listRefs.current[2] = el;
-              }}
-            >
-              <Link
-                href="/projects"
-                className="mx-4 border-b border-border h-14 flex items-center ik-misc--nav-link"
-                onClick={toggleMenu}
-              >
-                Projects
-              </Link>
-            </div>
-
-            {/* Company */}
-            <div
-              className="mx-4 border-b border-border"
-              ref={(el) => {
                 listRefs.current[3] = el;
               }}
             >
-              <button
-                onClick={() => toggleSubmenu("company")}
-                className="w-full flex justify-between items-center h-14"
-              >
-                <span className="ik-misc--nav-link">Company</span>
-                <BiChevronDown
-                  className={`transition-transform duration-500 ${
-                    activeMenu === "company" ? "rotate-180" : ""
-                  }`}
-                  size={20}
-                />
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeMenu === "company"
-                    ? "max-h-40 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="pl-4 flex flex-col pb-3">
-                  <Link
-                    href="/about"
-                    className="text-sm h-12 flex items-center ik-misc--nav-link"
-                    onClick={toggleMenu}
-                  >
-                    About Us
-                  </Link>
-                  <Link
-                    href="/careers"
-                    className="text-sm h-12 flex items-center ik-misc--nav-link"
-                    onClick={toggleMenu}
-                  >
-                    Career
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div
-              ref={(el) => {
-                listRefs.current[4] = el;
-              }}
-            >
               <Link
-                href="/contact"
+                href="/company"
                 className="mx-4 border-b border-border h-14 flex items-center ik-misc--nav-link"
                 onClick={toggleMenu}
               >
-                Contact
+                Company
               </Link>
             </div>
 
