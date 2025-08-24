@@ -2,13 +2,17 @@
 
 :root {
   --background: #011638;
-  --foreground: #171717;
+  --foreground: #172747;
 }
 
 @theme inline {
   --color-primary-blue: #0039a6;
+  --color-primary-light-blue: #5790e1;
+  --color-primary-dark-blue: #172747;
   --color-primary-bg: #faf6f2;
+  --color-white-smoke: #eef1f5;
   --color-seagull: #9dd8eb;
+  --color-blue-gray: #4b576f;
   --color-alt-blue: #c1e3ff;
   --color-background: #f9f6f4;
   --color-primary-seagull: #a5dff2;
