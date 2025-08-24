@@ -2,7 +2,7 @@
 @use "variable";
 
 // Base container layout with responsive max-width and padding
-.base {
+.ik {
   &-container {
     margin-right: auto;
     margin-left: auto;
@@ -42,13 +42,13 @@
 }
 
 // Figure wrapper for media (image/video) with hidden overflow
-.base-figure {
+.ik-figure {
   position: relative;
   overflow: hidden;
 }
 
 // Full-cover image inside a container (absolutely positioned)
-.base-image {
+.ik-image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -57,7 +57,7 @@
 }
 
 // Responsive grid layout (4 columns on mobile, 12 on large screens)
-.base-grid {
+.ik-grid {
   display: grid;
   column-gap: rem(16);
   grid-template-columns: repeat(4, minmax(0, 1fr));

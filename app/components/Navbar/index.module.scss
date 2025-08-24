@@ -1,0 +1,52 @@
+@use "main";
+
+.container {
+  container-name: hero-banner;
+  container-type: inline-size;
+
+  .desktopMenu {
+    display: flex;
+  }
+
+  .desktopMenuBtn {
+    display: flex;
+
+    // @media (pointer: coarse) {
+    //   display: none;
+    // }
+
+    // @media (min-width: main.$desktop) {
+    //   display: flex;
+    // }
+  }
+
+  .mobileMenu {
+    display: none;
+
+    // @media (pointer: coarse) {
+    //   display: flex;
+    // }
+
+    // @media (min-width: main.$desktop) {
+    //   display: none;
+    // }
+  }
+
+  @container hero-banner (width < 721px) {
+    .desktopMenu {
+      display: none;
+    }
+
+    .desktopMenuBtn {
+      display: none;
+    }
+
+    .mobileMenu {
+      display: flex;
+    }
+  }
+}
+
+:export {
+  desktop: main.$desktop;
+}

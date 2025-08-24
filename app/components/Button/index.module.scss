@@ -1,0 +1,160 @@
+@use "main";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  position: relative;
+  padding-inline: main.rem(24);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  transform-origin: center center;
+
+  .buttonHoverBg {
+    position: absolute;
+    inset: auto 0 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    transform-origin: 50% 100%;
+    z-index: 0;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    transform: scale(1, 0);
+  }
+
+  &:hover {
+    .buttonHoverBg {
+      transform: scale(1.2, 1.4);
+    }
+
+    .buttonBg {
+      transition: background-color 0.45s cubic-bezier(1, 0.007, 1, 0.007),
+        transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transform: scale(1.025, 1.044);
+    }
+  }
+
+  &:active {
+    transform: scale(0.955);
+  }
+}
+
+.buttonBg {
+  position: absolute;
+  inset: 0;
+  border-radius: main.rem(1000);
+  overflow: hidden;
+  transition: background-color 0.25s cubic-bezier(1, 0.007, 1, 0.007),
+    transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.filled {
+  color: main.$neutral-white;
+  transition: color 0.3s;
+
+  .buttonBg {
+    background-color: main.$primary-blue;
+  }
+
+  .buttonHoverBg {
+    background-color: main.$primary-alt-blue;
+  }
+
+  &:hover {
+    color: main.$primary-blue;
+
+    .buttonBg {
+      background-color: main.$primary-alt-blue;
+    }
+  }
+}
+
+.filled-inverse {
+  background-color: main.$primary-background;
+  color: main.$neutral-deep-blue;
+  border-radius: main.rem(1000);
+  transition: color 0.3s;
+
+  .buttonBg {
+    background-color: main.$primary-background;
+  }
+
+  .buttonHoverBg {
+    background-color: main.$primary-alt-blue;
+  }
+
+  &:hover {
+    color: main.$primary-blue;
+
+    .buttonBg {
+      background-color: main.$primary-alt-blue;
+    }
+  }
+}
+
+.outlined {
+  background-color: transparent;
+  color: main.$neutral-deep-blue;
+  outline: 1px solid main.$neutral-deep-blue;
+  border-radius: main.rem(1000);
+  transition: color 0.3s;
+
+  .buttonBg {
+    background-color: transparent;
+  }
+
+  .buttonHoverBg {
+    background-color: main.$neutral-deep-blue;
+  }
+
+  &:hover {
+    color: main.$primary-background;
+
+    .buttonBg {
+      background-color: main.$neutral-deep-blue;
+    }
+  }
+}
+
+.filled-light-hover {
+  color: main.$neutral-white;
+  transition: color 0.3s;
+
+  .buttonBg {
+    background-color: main.$primary-blue;
+  }
+
+  .buttonHoverBg {
+    background-color: main.$primary-background;
+  }
+
+  &:hover {
+    color: main.$primary-blue;
+
+    .buttonBg {
+      background-color: main.$primary-background;
+    }
+  }
+}
+
+.outlined-light {
+  background-color: transparent;
+  color: main.$primary-background;
+  outline: 1px solid main.$primary-background;
+  border-radius: main.rem(1000);
+  transition: color 0.3s;
+
+  .buttonBg {
+    background-color: transparent;
+  }
+}
+
+.small {
+  height: main.rem(48);
+}
+
+.nav {
+  height: main.rem(40);
+}
