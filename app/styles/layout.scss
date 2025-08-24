@@ -39,6 +39,14 @@
       max-width: rem(1440);
     }
   }
+
+  &-section-top {
+    padding-top: rem(200);
+  }
+
+  &-section-bottom {
+    margin-bottom: rem(160);
+  }
 }
 
 // Figure wrapper for media (image/video) with hidden overflow

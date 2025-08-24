@@ -157,60 +157,60 @@ export const Navbar = () => {
     }
   }, [isOpen]);
 
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [isVisible, setIsVisible] = useState(true);
+  // const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    let ticking = false;
+  // useEffect(() => {
+  //   let ticking = false;
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
-          const diff = currentScrollY - lastScrollY;
+  //   const handleScroll = () => {
+  //     if (!ticking) {
+  //       window.requestAnimationFrame(() => {
+  //         const currentScrollY = window.scrollY;
+  //         const diff = currentScrollY - lastScrollY;
 
-          if (diff > 5 && currentScrollY > 30) {
-            // scrolling down
-            setIsVisible(false);
-          } else if (diff < -5) {
-            // scrolling up
-            setIsVisible(true);
-          }
+  //         if (diff > 5 && currentScrollY > 30) {
+  //           // scrolling down
+  //           setIsVisible(false);
+  //         } else if (diff < -5) {
+  //           // scrolling up
+  //           setIsVisible(true);
+  //         }
 
-          setLastScrollY(currentScrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
+  //         setLastScrollY(currentScrollY);
+  //         ticking = false;
+  //       });
+  //       ticking = true;
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [lastScrollY]);
 
-  useGSAP(
-    () => {
-      if (isVisible) {
-        gsap.to(ref.current, {
-          y: 0,
-          duration: 0.6,
-          ease: "power3.out",
-        });
-      } else {
-        gsap.to(ref.current, {
-          y: "-100%",
-          duration: 0.6,
-          ease: "power3.in",
-        });
-      }
-    },
-    { dependencies: [isVisible] }
-  );
+  // useGSAP(
+  //   () => {
+  //     if (isVisible) {
+  //       gsap.to(ref.current, {
+  //         y: 0,
+  //         duration: 0.6,
+  //         ease: "power3.out",
+  //       });
+  //     } else {
+  //       gsap.to(ref.current, {
+  //         y: "-100%",
+  //         duration: 0.6,
+  //         ease: "power3.in",
+  //       });
+  //     }
+  //   },
+  //   { dependencies: [isVisible] }
+  // );
 
   const nav = (
     <nav
       className={twMerge(
-        "w-full h-16 lg:h-20 flex items-center z-50 translate-y-0 fixed"
+        "w-full h-16 lg:h-20 flex items-center z-50 translate-y-0 absolute"
       )}
       ref={ref}
     >
@@ -223,7 +223,7 @@ export const Navbar = () => {
         <div className="mx-auto flex items-center justify-between h-full">
           {/* Logo */}
           <Link href={"/"}>
-            <figure className="w-[13.75rem]">
+            <figure className="w-46">
               <Image
                 src="/logo.svg"
                 alt="Invicta Logo"

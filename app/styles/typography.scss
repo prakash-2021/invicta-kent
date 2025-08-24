@@ -20,28 +20,28 @@
 .ik-heading--h1 {
   @include fontSize(36px, 56px); // Mobile 36 → Desktop 56
   line-height: clamp(44px, 10vw, 68px);
-  letter-spacing: -0.01em;
-  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-weight: 600;
 }
 
 .ik-heading--h2 {
   @include fontSize(28px, 40px); // Mobile 28 → Desktop 40
   line-height: clamp(36px, 6vw, 52px);
-  letter-spacing: -0.01em;
-  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-weight: 600;
 }
 
 .ik-heading--h3 {
   @include fontSize(22px, 28px); // Mobile 22 → Desktop 28
   line-height: clamp(30px, 5vw, 36px);
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
   font-weight: 600;
 }
 
 .ik-heading--h4 {
   @include fontSize(18px, 22px); // Mobile 18 → Desktop 22
   line-height: clamp(26px, 4vw, 30px);
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
   font-weight: 600;
 }
 
@@ -89,10 +89,11 @@
 // --------------------
 
 .ik-misc--tagline {
-  @include fontSize(18px, 20px);
-  line-height: clamp(26px, 4vw, 28px);
-  font-weight: 400;
+  @include fontSize(15px, 15px);
+  line-height: clamp(22px, 4vw, 22px);
+  font-weight: 600;
   letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 .ik-misc--link {
@@ -107,13 +108,13 @@
   line-height: 150%;
   font-weight: 600;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .ik-misc--label {
   @include fontSize(14px, 14px);
   line-height: 145%;
   font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .ik-misc--nav-link {

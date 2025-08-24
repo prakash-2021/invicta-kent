@@ -55,7 +55,7 @@
   transition: color 0.3s;
 
   .buttonBg {
-    background-color: main.$primary-blue;
+    background-color: main.$primary-dark-blue;
   }
 
   .buttonHoverBg {
@@ -63,7 +63,7 @@
   }
 
   &:hover {
-    color: main.$primary-blue;
+    color: main.$primary-dark-blue;
 
     .buttonBg {
       background-color: main.$primary-alt-blue;
@@ -86,7 +86,7 @@
   }
 
   &:hover {
-    color: main.$primary-blue;
+    color: main.$primary-dark-blue;
 
     .buttonBg {
       background-color: main.$primary-alt-blue;
@@ -123,7 +123,7 @@
   transition: color 0.3s;
 
   .buttonBg {
-    background-color: main.$primary-blue;
+    background-color: main.$primary-dark-blue;
   }
 
   .buttonHoverBg {
@@ -131,7 +131,7 @@
   }
 
   &:hover {
-    color: main.$primary-blue;
+    color: main.$primary-dark-blue;
 
     .buttonBg {
       background-color: main.$primary-background;
