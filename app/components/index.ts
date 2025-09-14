@@ -1,6 +1,7 @@
 export * from "./Accordion";
 export * from "./Button";
 export * from "./DateInput";
+export * from "./FaqAccordion";
 export * from "./FeatureCard";
 export * from "./Footer";
 export * from "./Navbar";

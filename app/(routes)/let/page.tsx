@@ -1,5 +1,6 @@
 import {
   Detail,
+  Faq,
   Hero,
   Lets,
   Package,
@@ -24,6 +25,8 @@ const Let = () => {
       <Lets />
 
       <Validation />
+
+      <Faq />
     </>
   );
 };
