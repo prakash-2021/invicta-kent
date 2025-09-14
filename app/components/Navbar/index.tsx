@@ -241,7 +241,7 @@ export const Navbar = () => {
             )}
           >
             <Link
-              href="/company"
+              href="/properties"
               className="ik-misc--nav-link opacity-80 hover:opacity-100 transition-opacity"
             >
               Properties
@@ -273,12 +273,12 @@ export const Navbar = () => {
                 )}
               >
                 <div className="p-1 bg-white rounded-lg shadow-lg">
-                  <Link href={"home"} className={NAV_ITEM_CLASS}>
-                    Service 1
+                  <Link href={"/tenant-services"} className={NAV_ITEM_CLASS}>
+                    Tenant Services
                   </Link>
 
-                  <Link href={"home"} className={NAV_ITEM_CLASS}>
-                    Service 2
+                  <Link href={"/report-maintenance"} className={NAV_ITEM_CLASS}>
+                    Report Maintenance
                   </Link>
                 </div>
               </div>
@@ -312,8 +312,12 @@ export const Navbar = () => {
                 )}
               >
                 <div className="p-1 bg-white rounded-lg shadow-lg">
-                  <Link href={"asdasd"} className={NAV_ITEM_CLASS}>
-                    adasd
+                  <Link href={"/let"} className={NAV_ITEM_CLASS}>
+                    Let
+                  </Link>
+
+                  <Link href={"/mortgages"} className={NAV_ITEM_CLASS}>
+                    Mortgages
                   </Link>
                 </div>
               </div>
