@@ -8,7 +8,7 @@ export const FeatureCard = () => {
       <figure className="ik-figure rounded-sm pt-[100%] mb-5">
         <Image
           alt=""
-          src={"https://picsum.photos/id/1/802/800"}
+          src={"https://picsum.photos/802/800"}
           width={600}
           height={600}
           className="ik-image"

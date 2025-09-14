@@ -45,9 +45,7 @@ export const Service = () => {
   return (
     <section className="ik-section-bottom bg-primary-dark-blue py-30">
       <div className="ik-container">
-        <div className="ik-misc--tagline text-white-blue mb-3">
-          Our Services
-        </div>
+        <div className="ik-misc--tagline text-white mb-3">Our Services</div>
 
         <h2 className="ik-heading--h2 mb-20 text-white">
           Tailored Solutions for <br /> Tenants & Landlords
