@@ -8,4 +8,5 @@ export * from "./Footer";
 export * from "./Navbar";
 export * from "./SafetyAccordion";
 export * from "./Select";
+export * from "./TextArea";
 export * from "./TextInput";

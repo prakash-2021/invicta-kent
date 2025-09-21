@@ -1,6 +1,11 @@
 "use client";
 
-import { Button, SelectInput, TextInput } from "@/app/components";
+import {
+  Button,
+  SelectInput,
+  TextareaInput,
+  TextInput,
+} from "@/app/components";
 
 const Contact = () => {
   return (
@@ -72,6 +77,14 @@ const Contact = () => {
                   ]}
                 />
               </div>
+            </div>
+
+            <div className="mb-8">
+              <TextareaInput
+                label="How can we help you?"
+                placeholder="Type your message"
+                required
+              />
             </div>
 
             <Button label="Submit" size="small" variant="filled" />

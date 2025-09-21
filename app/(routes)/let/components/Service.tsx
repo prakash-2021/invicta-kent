@@ -10,7 +10,7 @@ const items = [
   {
     title: "Full Property Management",
     content:
-      "Our comprehensive service covers everything from tenant sourcing to day-to-day management, ensuring peace of mind for landlords and excellent service for tenants.",
+      "A comprehensive solution that includes everything from maintenance coordination and tenant communications to mid-term property inspections. This service also encompasses our Let Only and Rent Collection packages, providing complete peace of mind and professional oversight of your rental property.",
   },
 ];
 

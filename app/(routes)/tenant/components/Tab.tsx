@@ -1,20 +1,18 @@
 "use client";
 
 import { AccordionContent } from "@/app/components";
+import { CreditCard, Currency } from "@/app/icons";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { JSX, useState } from "react";
 import {
   BiCreditCard,
   BiFile,
-  BiHome,
-  BiMoney,
-  BiShield,
   BiSolidCheckCircle,
   BiSolidErrorCircle,
 } from "react-icons/bi";
 import { BsFillEyeFill } from "react-icons/bs";
-import { MdConstruction, MdPolicy } from "react-icons/md";
+import { MdConstruction, MdHome, MdPolicy, MdShield } from "react-icons/md";
 import { SiGoogledocs } from "react-icons/si";
 
 const tabs = ["Securing Property", "Moving In", "Living There", "Moving Out"];
@@ -39,7 +37,7 @@ const tabContent: Record<string, JSX.Element> = {
                   <div className="pb-12">
                     <div className="flex gap-4 mb-6">
                       <div className="w-12 h-12 flex items-center justify-center bg-white rounded-sm">
-                        <BiShield color="#172747" size={24} />
+                        <MdShield color="#172747" size={24} />
                       </div>
 
                       <div>
@@ -54,7 +52,7 @@ const tabContent: Record<string, JSX.Element> = {
 
                     <div className="flex gap-4 mb-6">
                       <div className="w-12 h-12 flex items-center justify-center bg-white rounded-sm">
-                        <BiCreditCard color="#172747" size={24} />
+                        <CreditCard />
                       </div>
 
                       <div>
@@ -68,7 +66,7 @@ const tabContent: Record<string, JSX.Element> = {
 
                     <div className="flex gap-4 mb-6">
                       <div className="w-12 h-12 flex items-center justify-center bg-white rounded-sm">
-                        <BiMoney color="#172747" size={24} />
+                        <Currency />
                       </div>
 
                       <div>
@@ -84,7 +82,7 @@ const tabContent: Record<string, JSX.Element> = {
 
                     <div className="flex gap-4 mb-6">
                       <div className="w-12 h-12 flex items-center justify-center bg-white rounded-sm">
-                        <BiHome color="#172747" size={24} />
+                        <MdHome color="#172747" size={24} />
                       </div>
 
                       <div>
@@ -361,9 +359,10 @@ const tabContent: Record<string, JSX.Element> = {
               <BsFillEyeFill size={24} />
             </div>
 
-            <p className="mb-0.5 ik-body--md--600">Essential Documents</p>
+            <p className="mb-0.5 ik-body--md--600">Property Inspections</p>
             <p className="text-blue-gray ik-body--sm--400">
-              You must receive these documents on moving in:
+              Periodic inspections (typically every 6-12 months) to check the
+              property&apos;s condition.
             </p>
             <div className="p-3 border border-border rounded-sm mt-4">
               <p className="ik-misc--label">Your Rights:</p>
@@ -428,15 +427,15 @@ const tabContent: Record<string, JSX.Element> = {
               property&apos;s condition.
             </p>
             <ul className="space-y-3 mt-3 pl-2">
-              <li className="flex items-center gap-3">
-                <span className="w-0.5 h-0.5 rounded-full bg-primary-dark-blue" />
+              <li className="flex gap-3">
+                <span className="w-0.5 h-0.5 mt-3 rounded-full bg-primary-dark-blue" />
                 <span>
                   Fair Wear & Tear: Normal deterioration like worn carpet in
                   hallways cannot be deducted from your deposit.
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="w-0.5 h-0.5 rounded-full bg-primary-dark-blue" />
+              <li className="flex gap-3">
+                <span className="w-0.5 h-0.5 mt-3 rounded-full bg-primary-dark-blue" />
                 <span>
                   Deductible Damage: Issues beyond fair wear and tear, such as
                   burn marks or negligent damage.
@@ -494,7 +493,7 @@ export const Tabs = () => {
                   {activeTab === tab && (
                     <motion.div
                       layoutId="underline"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-600 rounded"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary-light-blue rounded"
                       transition={{
                         type: "spring",
                         stiffness: 500,

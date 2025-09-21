@@ -5,7 +5,7 @@ import style from "./index.module.scss";
 
 export const FeatureCard = () => {
   return (
-    <Link href={"/properties/1"}>
+    <Link href={"/properties-details/1"}>
       <div className={style.projectCard}>
         <figure className="ik-figure rounded-sm pt-[100%] mb-5">
           <Image

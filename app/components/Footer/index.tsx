@@ -47,7 +47,7 @@ export const Footer = () => {
               Contact
             </Link>
           </div>
-          <div className="mb-10 lg:mb-0 lg:col-span-2">
+          <div className="mb-10 lg:mb-0 lg:col-span-2 lg:col-start-11">
             <h6 className="ik-body--md--600 text-primary-dark-blue mb-4">
               Services
             </h6>
@@ -71,7 +71,7 @@ export const Footer = () => {
               Mortgage Services
             </Link>
           </div>
-          <div className="lg:col-span-2">
+          {/* <div className="lg:col-span-2">
             <h6 className="ik-body--md--600 text-primary-dark-blue mb-4">
               Follow us
             </h6>
@@ -94,7 +94,7 @@ export const Footer = () => {
             >
               Facebook
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="py-6 lg:py-8 flex flex-col lg:flex-row  gap-4 lg:items-center justify-between border-t border-border mt-12 lg:mt-20">
