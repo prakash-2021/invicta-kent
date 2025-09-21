@@ -1,4 +1,5 @@
 export * from "./Accordion";
+export * from "./AccordionContent";
 export * from "./Button";
 export * from "./DateInput";
 export * from "./FaqAccordion";
