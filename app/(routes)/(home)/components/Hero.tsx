@@ -19,7 +19,7 @@ export const Hero = () => {
               <Button
                 label="View listing"
                 size="small"
-                variant="filled-light-hover"
+                variant="filled"
                 className="w-fit"
               />
             </Link>

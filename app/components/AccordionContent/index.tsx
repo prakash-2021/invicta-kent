@@ -4,6 +4,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import { twMerge } from "tailwind-merge";
 
 interface AccordionItem {
   title: string;
@@ -24,7 +25,12 @@ export const AccordionContent = ({ items }: AccordionProps) => {
   return (
     <div className="w-full max-w-xl mx-auto text-primary-dark-blue">
       {items.map((item, index) => (
-        <div key={index} className="border-b border-border">
+        <div
+          key={index}
+          className={twMerge(
+            items.length === index + 1 ? "" : "border-b border-border"
+          )}
+        >
           {/* Header */}
           <button
             onClick={() => toggle(index)}
@@ -49,7 +55,7 @@ export const AccordionContent = ({ items }: AccordionProps) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <div className="pb-4">{item.content}</div>
+                <div>{item.content}</div>
               </motion.div>
             )}
           </AnimatePresence>

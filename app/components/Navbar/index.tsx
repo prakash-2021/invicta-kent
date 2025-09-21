@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { twMerge } from "tailwind-merge";
@@ -207,6 +208,8 @@ export const Navbar = () => {
     { dependencies: [isVisible] }
   );
 
+  const pathname = usePathname();
+
   const nav = (
     <nav
       className={twMerge(
@@ -217,7 +220,7 @@ export const Navbar = () => {
     >
       <div
         className={twMerge(
-          "ik-container w-full relative h-full",
+          "px-4 lg:px-16 max-w-[1440px] w-full relative h-full",
           style.container
         )}
       >
@@ -243,7 +246,10 @@ export const Navbar = () => {
           >
             <Link
               href="/properties"
-              className="ik-misc--nav-link opacity-80 hover:opacity-100 transition-opacity"
+              className={twMerge(
+                "ik-misc--nav-link opacity-80 hover:opacity-100 transition-opacity",
+                pathname === "/properties" && "text-primary-light-blue"
+              )}
             >
               Properties
             </Link>
@@ -254,7 +260,14 @@ export const Navbar = () => {
               onMouseLeave={() => handleMouseLeave("tenant")}
             >
               <button className="flex items-center gap-0.5 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
-                <span className="ik-misc--nav-link">Tenant Services</span>
+                <span
+                  className={twMerge(
+                    "ik-misc--nav-link",
+                    pathname === "/tenant" && "text-primary-light-blue"
+                  )}
+                >
+                  Tenant Services
+                </span>
                 <BiChevronDown
                   size={20}
                   color="var(--color-deep-blue)"
@@ -293,7 +306,15 @@ export const Navbar = () => {
               onMouseLeave={() => handleMouseLeave("landlord")}
             >
               <button className="flex items-center gap-0.5 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
-                <span className="ik-misc--nav-link">Landlord Services</span>
+                <span
+                  className={twMerge(
+                    "ik-misc--nav-link",
+                    (pathname === "/mortgage" || pathname === "/let") &&
+                      "text-primary-light-blue"
+                  )}
+                >
+                  Landlord Services
+                </span>
                 <BiChevronDown
                   size={20}
                   color="var(--color-deep-blue)"
@@ -327,7 +348,10 @@ export const Navbar = () => {
             {/* Projects */}
             <Link
               href="/company"
-              className="ik-misc--nav-link opacity-80 hover:opacity-100 transition-opacity"
+              className={twMerge(
+                "ik-misc--nav-link opacity-80 hover:opacity-100 transition-opacity",
+                pathname === "/company" && "text-primary-light-blue"
+              )}
             >
               Company
             </Link>
@@ -372,7 +396,7 @@ export const Navbar = () => {
           className="xl:hidden fixed top-0 left-0 w-full h-dvh -z-1 border-b border-border overflow-y-auto -translate-y-full bg-white"
         >
           {/* Mobile items */}
-          <div className="flex flex-col space-y-2 pt-[64px]">
+          <div className="flex flex-col space-y-2 pt-[88px]">
             <div
               ref={(el) => {
                 listRefs.current[0] = el;

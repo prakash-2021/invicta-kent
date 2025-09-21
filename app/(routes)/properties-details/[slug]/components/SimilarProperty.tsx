@@ -39,7 +39,7 @@ export function SimilarProperty() {
             paddingRight: containerOffset,
           }}
         >
-          {[1, 2, 3, 4, 5].map((_, i) => (
+          {[1, 2, 3].map((_, i) => (
             <div
               className="min-w-[300px] lg:min-w-[384px] mr-8 lg:mr-6 flex-shrink-0"
               key={i}

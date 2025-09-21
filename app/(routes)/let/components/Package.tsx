@@ -53,8 +53,8 @@ export const Package = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
           {services.map((service) => (
-            <div key={service.id} className="p-6 bg-white rounded-sm">
-              <div className="flex flex-col justify-between h-78 lg:h-90">
+            <div key={service.id} className=" bg-white rounded-sm">
+              <div className="flex flex-col justify-between h-78 lg:h-90 p-6">
                 <div>
                   <div className="mb-6 w-12 h-12 flex items-center justify-center bg-offwhite rounded-md">
                     {service.icon}
