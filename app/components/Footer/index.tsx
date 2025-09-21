@@ -23,7 +23,7 @@ export const Footer = () => {
               with ease.
             </p>
           </div>
-          <div className="mb-10 lg:mb-0 lg:col-span-2 lg:col-start-7">
+          <div className="mb-10 lg:mb-0 lg:col-span-2 lg:col-start-9">
             <h6 className="ik-body--md--600 text-primary-dark-blue mb-4">
               Quick Links
             </h6>
