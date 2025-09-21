@@ -16,7 +16,7 @@ interface AccordionProps {
 }
 
 export const SafetyAccordion = ({ items }: AccordionProps) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -29,16 +29,32 @@ export const SafetyAccordion = ({ items }: AccordionProps) => {
           {/* Header */}
           <button
             onClick={() => toggle(index)}
-            className="w-full flex gap-31 items-center h-24 text-left cursor-pointer"
+            className="w-full flex flex-col lg:flex-row gap-4 lg:gap-31 py-8 lg:py-0 items-center lg:h-24 text-left cursor-pointer"
           >
-            <span className="ik-heading--h4 w-full max-w-96">{item.title}</span>
+            <div className="flex lg:hidden items-center justify-between gap-4 w-full ">
+              <span className="ik-heading--h4 w-full max-w-96">
+                {item.title}
+              </span>
+              <div className="lg:hidden">
+                {activeIndex === index ? (
+                  <BiChevronUp size={24} />
+                ) : (
+                  <BiChevronDown size={24} />
+                )}
+              </div>
+            </div>
+            <span className="hidden lg:block ik-heading--h4 w-full max-w-96">
+              {item.title}
+            </span>
             <div className="flex items-center justify-between gap-4 w-full">
               <span>{item.content}</span>
-              {activeIndex === index ? (
-                <BiChevronUp size={24} />
-              ) : (
-                <BiChevronDown size={24} />
-              )}
+              <div className="hidden lg:block">
+                {activeIndex === index ? (
+                  <BiChevronUp size={24} />
+                ) : (
+                  <BiChevronDown size={24} />
+                )}
+              </div>
             </div>
           </button>
 
@@ -53,7 +69,7 @@ export const SafetyAccordion = ({ items }: AccordionProps) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <div className="pb-6 pl-127 space-y-3">
+                <div className="pb-6 lg:pl-127 space-y-3">
                   {item.description.map((desc, idx) => (
                     <p key={idx} className="flex gap-3">
                       <span className="min-w-0.5 h-0.5 rounded-full bg-primary-dark-blue mt-3" />

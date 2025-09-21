@@ -2,20 +2,19 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import { BiMinus, BiPlus } from "react-icons/bi";
-import { twMerge } from "tailwind-merge";
+import { ReactNode, useState } from "react";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 interface AccordionItem {
   title: string;
-  content: string;
+  content: ReactNode;
 }
 
 interface AccordionProps {
   items: AccordionItem[];
 }
 
-export const Accordion = ({ items }: AccordionProps) => {
+export const AccordionContent = ({ items }: AccordionProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const toggle = (index: number) => {
@@ -23,24 +22,19 @@ export const Accordion = ({ items }: AccordionProps) => {
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto text-white">
+    <div className="w-full max-w-xl mx-auto text-primary-dark-blue">
       {items.map((item, index) => (
-        <div
-          key={index}
-          className={twMerge(
-            items.length === index + 1 ? "" : "border-b border-gray-700"
-          )}
-        >
+        <div key={index} className="border-b border-border">
           {/* Header */}
           <button
             onClick={() => toggle(index)}
-            className="w-full flex justify-between items-center h-20 text-left font-semibold cursor-pointer"
+            className="w-full flex justify-between items-center h-22 text-left font-semibold cursor-pointer"
           >
             <span className="ik-heading--h4">{item.title}</span>
             {activeIndex === index ? (
-              <BiMinus size={24} />
+              <BiChevronUp size={24} />
             ) : (
-              <BiPlus size={24} />
+              <BiChevronDown size={24} />
             )}
           </button>
 
@@ -55,7 +49,7 @@ export const Accordion = ({ items }: AccordionProps) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <p className="pb-4">{item.content}</p>
+                <div className="pb-4">{item.content}</div>
               </motion.div>
             )}
           </AnimatePresence>

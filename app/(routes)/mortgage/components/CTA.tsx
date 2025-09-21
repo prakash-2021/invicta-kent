@@ -6,15 +6,15 @@ export const CTA = () => {
     <section className="py-20 lg:py-30 bg-white-smoke">
       <div className="ik-container lg:text-center">
         <h2 className="mb-3 ik-heading--h2 text-primary-dark-blue">
-          Let&apos;s Find Your Perfect Property
+          Find the Right Mortgage for You
         </h2>
-        <p className="mb-10 ik-body--md--400 text-blue-gray max-w-[524px] mx-auto">
-          Whether you’re looking to rent, let, or get mortgage support, our team
-          is here to help every step of the way.
+        <p className="mb-10 ik-body--md--400 text-blue-gray">
+          Expert advisors in Ashford compare deals and guide you every <br />{" "}
+          step of the way.
         </p>
-        <Link href={"/contact"}>
+        <Link href={"/mortgage"}>
           <Button
-            label="Contact us"
+            label="Get Mortgage Advice"
             size="small"
             variant="filled"
             className="lg:mx-auto"

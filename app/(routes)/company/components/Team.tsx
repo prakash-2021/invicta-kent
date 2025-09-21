@@ -7,13 +7,13 @@ export const Team = () => {
         <div className="ik-misc--tagline text-primary-light-blue mb-3">
           About us
         </div>
-        <h2 className="ik-heading--h2 mb-20 text-primary-dark-blue text-balance">
+        <h2 className="ik-heading--h2 mb-16 lg:mb-20 text-primary-dark-blue text-balance">
           The People Behind Invicta <br /> Kent Management
         </h2>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
           <div>
-            <figure className="ik-figure rounded-sm pt-[100%] mb-8">
+            <figure className="ik-figure rounded-sm pt-[100%] mb-4 lg:mb-8">
               <Image
                 alt=""
                 src={"https://picsum.photos/600/600"}

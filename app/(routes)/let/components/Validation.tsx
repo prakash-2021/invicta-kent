@@ -2,9 +2,9 @@ import { Button, DateInput, SelectInput, TextInput } from "@/app/components";
 
 export const Validation = () => {
   return (
-    <section className="py-30 bg-white-smoke ik-section-bottom">
+    <section className="py-30 bg-white-smoke ik-section-bottom" id="form">
       <div className="ik-container">
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-6">
           <div>
             <div className="ik-misc--tagline text-primary-light-blue mb-3">
               Rental valuation
@@ -41,7 +41,7 @@ export const Validation = () => {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-8 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               <TextInput
                 label="Email"
                 placeholder="example@email.com"
@@ -66,7 +66,7 @@ export const Validation = () => {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-8 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               <TextInput
                 label="House Name/Number"
                 placeholder="Rose Cottage or No. 12"
@@ -88,9 +88,19 @@ export const Validation = () => {
                 name="country"
                 required
                 options={[
-                  { label: "Let", value: "Let" },
-                  { label: "India", value: "india" },
-                  { label: "USA", value: "usa" },
+                  { label: "Let Only", value: "Let Only" },
+                  {
+                    label: "Property Management – Basic",
+                    value: "Property Management – Basic",
+                  },
+                  {
+                    label: "Property Management – Pro",
+                    value: "Property Management – Pro",
+                  },
+                  {
+                    label: "Property Management – Ultra",
+                    value: "Property Management – Ultra",
+                  },
                 ]}
               />
             </div>

@@ -8,7 +8,7 @@ export const CTA = () => {
         <h2 className="mb-3 ik-heading--h2 text-primary-dark-blue">
           Let&apos;s Find Your Perfect Property
         </h2>
-        <p className="mb-10 ik-body--md--400 text-blue-gray max-w-[524px] mx-auto">
+        <p className="mb-10 ik-body--md--400 text-blue-gray">
           Whether you’re looking to rent, let, or get mortgage support, our team
           is here to help every step of the way.
         </p>

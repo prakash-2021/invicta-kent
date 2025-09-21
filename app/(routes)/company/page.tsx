@@ -1,5 +1,5 @@
 import { CTA } from "../(home)/components";
-import { Hero, Principle, Team } from "./components";
+import { Hero, Principle } from "./components";
 
 const Company = () => {
   return (
@@ -8,7 +8,7 @@ const Company = () => {
 
       <Principle />
 
-      <Team />
+      {/* <Team /> */}
 
       <CTA />
     </>

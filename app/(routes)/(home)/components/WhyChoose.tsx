@@ -53,11 +53,11 @@ export const WhyChoose = () => {
           Our Services
         </div>
 
-        <h2 className="ik-heading--h2 mb-20 text-primary-dark-blue">
+        <h2 className="ik-heading--h2 mb-16 lg:mb-20 text-primary-dark-blue">
           What Makes Invicta Kent <br /> Management Different
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-30 gap-y-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-30 gap-y-16 lg:gap-y-24">
           {services.map((service, index) => (
             <div key={index}>
               <div className="w-12 h-12 flex items-center justify-center bg-offwhite rounded-md mb-8">

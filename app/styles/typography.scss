@@ -98,6 +98,14 @@
   letter-spacing: 0;
 }
 
+.ik-body--sm--400 {
+  @include fontSize(14px, 14px); // Stays same Mobile & Desktop
+  line-height: 140%;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
 // --------------------
 // Misc
 // --------------------
@@ -132,7 +140,7 @@
 }
 
 .ik-misc--nav-link {
-  @include fontSize(14px, 14px);
+  @include fontSize(16px, 14px);
   line-height: 150%;
   font-weight: 500;
   letter-spacing: 0.01em;

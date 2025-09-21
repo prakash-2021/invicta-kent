@@ -59,14 +59,12 @@
   }
 
   .buttonHoverBg {
-    background-color: main.$primary-alt-blue;
+    background-color: main.$primary-light-blue;
   }
 
   &:hover {
-    color: main.$primary-dark-blue;
-
     .buttonBg {
-      background-color: main.$primary-alt-blue;
+      background-color: main.$primary-light-blue;
     }
   }
 }

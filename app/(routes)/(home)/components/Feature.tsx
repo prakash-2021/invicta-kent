@@ -1,4 +1,5 @@
 import { Button, FeatureCard } from "@/app/components";
+import Link from "next/link";
 
 export const Feature = () => {
   return (
@@ -11,7 +12,7 @@ export const Feature = () => {
           Homes in Kent
         </h2>
 
-        <div className="grid grid-cols-3 gap-x-6 gap-y-16 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-y-16 mb-10 lg:mb-12">
           <FeatureCard />
           <FeatureCard />
           <FeatureCard />
@@ -20,12 +21,14 @@ export const Feature = () => {
           <FeatureCard />
         </div>
 
-        <Button
-          label="Explore All Listing"
-          size="small"
-          variant="outlined"
-          className="mx-auto"
-        />
+        <Link href={"/properties"}>
+          <Button
+            label="Explore All Listing"
+            size="small"
+            variant="outlined"
+            className="mx-auto"
+          />
+        </Link>
       </div>
     </section>
   );
