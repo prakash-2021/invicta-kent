@@ -1,16 +1,11 @@
 "use client";
 
 import { AccordionContent } from "@/app/components";
-import { CreditCard, Currency } from "@/app/icons";
+import { Contract, CreditCard, Currency } from "@/app/icons";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { JSX, useState } from "react";
-import {
-  BiCreditCard,
-  BiFile,
-  BiSolidCheckCircle,
-  BiSolidErrorCircle,
-} from "react-icons/bi";
+import { BiSolidCheckCircle, BiSolidErrorCircle } from "react-icons/bi";
 import { BsFillEyeFill } from "react-icons/bs";
 import { MdConstruction, MdHome, MdPolicy, MdShield } from "react-icons/md";
 import { SiGoogledocs } from "react-icons/si";
@@ -80,7 +75,7 @@ const tabContent: Record<string, JSX.Element> = {
                       </div>
                     </div>
 
-                    <div className="flex gap-4 mb-6">
+                    <div className="flex gap-4">
                       <div className="w-12 h-12 flex items-center justify-center bg-white rounded-sm">
                         <MdHome color="#172747" size={24} />
                       </div>
@@ -204,7 +199,7 @@ const tabContent: Record<string, JSX.Element> = {
 
           <div className="p-6 rounded-sm bg-white">
             <div className="w-12 h-12 bg-offwhite rounded-md flex items-center justify-center mb-8">
-              <BiFile size={24} />
+              <Contract />
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Tenancy Agreement</p>
@@ -302,7 +297,7 @@ const tabContent: Record<string, JSX.Element> = {
 
           <div className="p-6 rounded-sm bg-white">
             <div className="w-12 h-12 bg-offwhite rounded-md flex items-center justify-center mb-8">
-              <BiCreditCard size={24} />
+              <CreditCard />
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Rent Collection</p>
@@ -416,7 +411,7 @@ const tabContent: Record<string, JSX.Element> = {
         <div className="mb-3">
           <div className="p-6 rounded-sm bg-white">
             <div className="w-12 h-12 bg-offwhite rounded-md flex items-center justify-center mb-8">
-              <BiCreditCard size={24} />
+              <CreditCard />
             </div>
 
             <p className="mb-0.5 ik-body--md--600">

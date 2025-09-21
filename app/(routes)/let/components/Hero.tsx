@@ -10,7 +10,7 @@ export const Hero = () => {
           <div className="ik-misc--tagline text-primary-light-blue mb-3">
             Property Lettings Made Simple
           </div>
-          <h1 className="ik-heading--h2 mb-3 max-w-[795px]">
+          <h1 className="ik-heading--h2 mb-3 max-w-[795px] mx-auto">
             Expert Letting Services Tailored to You.
           </h1>
           <p className="lg:px-28 mb-7 ik-body--md--400 text-primary-dark-blue">

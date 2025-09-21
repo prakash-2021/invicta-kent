@@ -220,7 +220,7 @@ export const Navbar = () => {
     >
       <div
         className={twMerge(
-          "px-4 lg:px-16 max-w-[1440px] w-full relative h-full",
+          "px-4 lg:px-16 mx-auto max-w-[1440px] w-full relative h-full",
           style.container
         )}
       >

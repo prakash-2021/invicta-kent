@@ -8,10 +8,10 @@ export const Hero = () => {
     <main className="ik-section-top ik-section-bottom">
       <div className="ik-container mb-12 lg:mb-30">
         <div className="max-w-221 mx-auto text-center">
-          <div className="ik-misc--tagline text-primary-light-blue mb-3 max-w-[795px]">
+          <div className="ik-misc--tagline text-primary-light-blue mb-3">
             Tenant Guide – Renting Made Simple
           </div>
-          <h1 className="ik-heading--h2 mb-3">
+          <h1 className="ik-heading--h2 mb-3 max-w-[795px] mx-auto">
             Step Into Your New Home with Ease
           </h1>
           <p className="lg:px-28 mb-7 ik-body--md--400 text-primary-dark-blue">
