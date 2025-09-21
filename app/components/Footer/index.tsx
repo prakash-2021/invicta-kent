@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="pt-20 pb-4">
+    <footer className="pt-10 lg:pt-20 pb-4">
       <div className="ik-container">
         {/* Logo */}
         <Link href={"/"} className="block mb-8">
@@ -12,8 +12,8 @@ export const Footer = () => {
           </figure>
         </Link>
 
-        <div className="grid grid-cols-12">
-          <div className="col-span-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-span-5 mb-12 lg:mb-0">
             <h4 className="ik-heading--h4 text-primary-dark-blue mb-3">
               Invicta Kent Management
             </h4>
@@ -23,61 +23,55 @@ export const Footer = () => {
               with ease.
             </p>
           </div>
-          <div className="col-span-2 col-start-7">
+          <div className="mb-10 lg:mb-0 lg:col-span-2 lg:col-start-7">
             <h6 className="ik-body--md--600 text-primary-dark-blue mb-4">
               Quick Links
             </h6>
 
             <Link
-              href={""}
+              href={"/properties"}
               className="block mb-3 ik-misc--nav-link text-blue-gray"
             >
               Listings
             </Link>
             <Link
-              href={""}
+              href={"/company"}
               className="block mb-3 ik-misc--nav-link text-blue-gray"
             >
               Company
             </Link>
             <Link
-              href={""}
+              href={"/contact"}
               className="block mb-3 ik-misc--nav-link text-blue-gray"
             >
               Contact
             </Link>
           </div>
-          <div className="col-span-2">
+          <div className="mb-10 lg:mb-0 lg:col-span-2">
             <h6 className="ik-body--md--600 text-primary-dark-blue mb-4">
               Services
             </h6>
 
             <Link
-              href={""}
+              href={"/tenant"}
               className="block mb-3 ik-misc--nav-link text-blue-gray"
             >
               Tenant Services
             </Link>
             <Link
-              href={""}
-              className="block mb-3 ik-misc--nav-link text-blue-gray"
-            >
-              Rent
-            </Link>
-            <Link
-              href={""}
+              href={"/let"}
               className="block mb-3 ik-misc--nav-link text-blue-gray"
             >
               Let
             </Link>
             <Link
-              href={""}
+              href={"/mortgage"}
               className="block mb-3 ik-misc--nav-link text-blue-gray"
             >
               Mortgage Services
             </Link>
           </div>
-          <div className="col-span-2">
+          <div className="lg:col-span-2">
             <h6 className="ik-body--md--600 text-primary-dark-blue mb-4">
               Follow us
             </h6>
@@ -103,7 +97,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="py-8 flex items-center justify-between border-t border-border mt-20">
+        <div className="py-6 lg:py-8 flex flex-col lg:flex-row  gap-4 lg:items-center justify-between border-t border-border mt-12 lg:mt-20">
           <span className="text-indigo-dye ik-body--sm--400">
             © 2025 Invicta Kent Management.
           </span>

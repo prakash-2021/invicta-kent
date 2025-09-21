@@ -59,7 +59,7 @@ export const Detail = () => {
   return (
     <section className="ik-section-bottom">
       <div className="ik-container">
-        <div className="grid grid-cols-12 gap-6">
+        <div className="lg:grid grid-cols-12 gap-6">
           <div className="col-span-8 col-start-3">
             <h3 className="ik-heading--h3 text-primary-dark-blue mb-6">
               Preparing to Let
@@ -71,7 +71,7 @@ export const Detail = () => {
               marketing and finance to legal compliance and maintenance.
             </p>
 
-            <p className="ik-body--md--400 text-primary-dark-blue mb-32">
+            <p className="ik-body--md--400 text-primary-dark-blue mb-13 lg:mb-32">
               This depth of professional knowledge, combined with our strong
               local insight, allows us to deliver a complete, end-to-end service
               for landlords. Whether you own a single investment property or
@@ -89,7 +89,7 @@ export const Detail = () => {
                   key={step.id}
                   className="px-10 py-8 border border-border rounded-sm"
                 >
-                  <div className="flex gap-21">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-21">
                     <div className="ik-body--md--600 text-primary-dark-blue">
                       {step.id}
                     </div>

@@ -1,5 +1,9 @@
 @use "./styles/main.scss";
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-geist-mono), sans-serif !important;
   color: #172747;

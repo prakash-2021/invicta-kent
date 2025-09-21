@@ -157,60 +157,61 @@ export const Navbar = () => {
     }
   }, [isOpen]);
 
-  // const [isVisible, setIsVisible] = useState(true);
-  // const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // useEffect(() => {
-  //   let ticking = false;
+  useEffect(() => {
+    let ticking = false;
 
-  //   const handleScroll = () => {
-  //     if (!ticking) {
-  //       window.requestAnimationFrame(() => {
-  //         const currentScrollY = window.scrollY;
-  //         const diff = currentScrollY - lastScrollY;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const diff = currentScrollY - lastScrollY;
 
-  //         if (diff > 5 && currentScrollY > 30) {
-  //           // scrolling down
-  //           setIsVisible(false);
-  //         } else if (diff < -5) {
-  //           // scrolling up
-  //           setIsVisible(true);
-  //         }
+          if (diff > 5 && currentScrollY > 30) {
+            // scrolling down
+            setIsVisible(false);
+          } else if (diff < -5) {
+            // scrolling up
+            setIsVisible(true);
+          }
 
-  //         setLastScrollY(currentScrollY);
-  //         ticking = false;
-  //       });
-  //       ticking = true;
-  //     }
-  //   };
+          setLastScrollY(currentScrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
 
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [lastScrollY]);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
-  // useGSAP(
-  //   () => {
-  //     if (isVisible) {
-  //       gsap.to(ref.current, {
-  //         y: 0,
-  //         duration: 0.6,
-  //         ease: "power3.out",
-  //       });
-  //     } else {
-  //       gsap.to(ref.current, {
-  //         y: "-100%",
-  //         duration: 0.6,
-  //         ease: "power3.in",
-  //       });
-  //     }
-  //   },
-  //   { dependencies: [isVisible] }
-  // );
+  useGSAP(
+    () => {
+      if (isVisible) {
+        gsap.to(ref.current, {
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        });
+      } else {
+        gsap.to(ref.current, {
+          y: "-100%",
+          duration: 0.6,
+          ease: "power3.in",
+        });
+      }
+    },
+    { dependencies: [isVisible] }
+  );
 
   const nav = (
     <nav
       className={twMerge(
-        "w-full h-16 lg:h-20 flex items-center z-50 translate-y-0 absolute"
+        "w-full h-16 lg:h-20 flex items-center z-50 translate-y-0 fixed",
+        lastScrollY > 300 ? "bg-white" : "transparent"
       )}
       ref={ref}
     >
@@ -249,17 +250,17 @@ export const Navbar = () => {
             <div
               className="relative"
               ref={menuRefs.services}
-              onMouseEnter={() => handleMouseEnter("tenet")}
-              onMouseLeave={() => handleMouseLeave("tenet")}
+              onMouseEnter={() => handleMouseEnter("tenant")}
+              onMouseLeave={() => handleMouseLeave("tenant")}
             >
               <button className="flex items-center gap-0.5 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
-                <span className="ik-misc--nav-link">Tenet Services</span>
+                <span className="ik-misc--nav-link">Tenant Services</span>
                 <BiChevronDown
                   size={20}
                   color="var(--color-deep-blue)"
                   className={twMerge(
                     "transition-transform duration-200",
-                    activeMenu === "tenet" ? "rotate-180" : ""
+                    activeMenu === "tenant" ? "rotate-180" : ""
                   )}
                 />
               </button>
@@ -267,17 +268,17 @@ export const Navbar = () => {
                 className={twMerge(
                   "w-[15.37rem]",
                   NAV_CLASS,
-                  activeMenu === "tenet"
+                  activeMenu === "tenant"
                     ? "opacity-100 scale-100 pointer-events-auto"
                     : "opacity-0 scale-90 pointer-events-none"
                 )}
               >
                 <div className="p-1 bg-white rounded-lg shadow-lg">
-                  <Link href={"/tenant-services"} className={NAV_ITEM_CLASS}>
+                  <Link href={"/tenant"} className={NAV_ITEM_CLASS}>
                     Tenant Services
                   </Link>
 
-                  <Link href={"/report-maintenance"} className={NAV_ITEM_CLASS}>
+                  <Link href={"/contact"} className={NAV_ITEM_CLASS}>
                     Report Maintenance
                   </Link>
                 </div>
@@ -316,7 +317,7 @@ export const Navbar = () => {
                     Let
                   </Link>
 
-                  <Link href={"/mortgages"} className={NAV_ITEM_CLASS}>
+                  <Link href={"/mortgage"} className={NAV_ITEM_CLASS}>
                     Mortgages
                   </Link>
                 </div>
@@ -339,7 +340,9 @@ export const Navbar = () => {
               "w-[13.75rem] justify-end"
             )}
           >
-            <Button label="Contact" size="nav" variant="outlined" />
+            <Link href={"/contact"}>
+              <Button label="Contact" size="nav" variant="outlined" />
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -366,7 +369,7 @@ export const Navbar = () => {
         {/* Mobile Menu */}
         <div
           ref={navRef}
-          className="xl:hidden fixed top-0 left-0 w-full h-dvh -z-1 border-b border-border overflow-y-auto -translate-y-full"
+          className="xl:hidden fixed top-0 left-0 w-full h-dvh -z-1 border-b border-border overflow-y-auto -translate-y-full bg-white"
         >
           {/* Mobile items */}
           <div className="flex flex-col space-y-2 pt-[64px]">
@@ -376,7 +379,7 @@ export const Navbar = () => {
               }}
             >
               <Link
-                href="/company"
+                href="/properties"
                 className="mx-4 border-b border-border h-14 flex items-center ik-misc--nav-link"
                 onClick={toggleMenu}
               >
@@ -391,39 +394,39 @@ export const Navbar = () => {
               }}
             >
               <button
-                onClick={() => toggleSubmenu("tenet")}
+                onClick={() => toggleSubmenu("tenant")}
                 className="w-full flex justify-between items-center h-14"
               >
-                <span className="ik-misc--nav-link">Tenet</span>
+                <span className="ik-misc--nav-link">Tenant Services</span>
                 <BiChevronDown
                   className={`transition-transform duration-500 ${
-                    activeMenu === "tenet" ? "rotate-180" : ""
+                    activeMenu === "tenant" ? "rotate-180" : ""
                   }`}
                   size={20}
                 />
               </button>
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeMenu === "tenet"
+                  activeMenu === "tenant"
                     ? "max-h-40 opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
                 <div className="pl-4 flex flex-col pb-3">
                   <Link
-                    href={"home"}
+                    href={"/tenant"}
                     className="text-sm h-12 flex items-center ik-misc--nav-link"
                     onClick={toggleMenu}
                   >
-                    lin1
+                    Tenant Services
                   </Link>
 
                   <Link
-                    href={"home"}
+                    href={"/contact"}
                     className="text-sm h-12 flex items-center ik-misc--nav-link"
                     onClick={toggleMenu}
                   >
-                    lin2
+                    Report Maintenance
                   </Link>
                 </div>
               </div>
@@ -457,11 +460,18 @@ export const Navbar = () => {
               >
                 <div className="pl-4 flex flex-col pb-3">
                   <Link
-                    href={"alsdnlasd"}
+                    href={"/let"}
                     className="text-sm h-12 flex items-center ik-misc--nav-link"
                     onClick={toggleMenu}
                   >
-                    asdasdasd
+                    Let
+                  </Link>
+                  <Link
+                    href={"/mortgage"}
+                    className="text-sm h-12 flex items-center ik-misc--nav-link"
+                    onClick={toggleMenu}
+                  >
+                    Mortgages
                   </Link>
                 </div>
               </div>
@@ -484,12 +494,14 @@ export const Navbar = () => {
 
             {/* Contact */}
             <div className="px-4 mb-4 absolute bottom-4 w-full" ref={buttonRef}>
-              <Button
-                label="Contact"
-                size="nav"
-                variant="outlined"
-                className="w-full"
-              />
+              <Link href={"/contact"}>
+                <Button
+                  label="Contact"
+                  size="nav"
+                  variant="outlined"
+                  className="w-full"
+                />
+              </Link>
             </div>
           </div>
         </div>

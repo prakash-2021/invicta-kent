@@ -40,7 +40,10 @@ export function SimilarProperty() {
           }}
         >
           {[1, 2, 3, 4, 5].map((_, i) => (
-            <div className="min-w-[384px] mr-6 flex-shrink-0" key={i}>
+            <div
+              className="min-w-[300px] lg:min-w-[384px] mr-8 lg:mr-6 flex-shrink-0"
+              key={i}
+            >
               <FeatureCard />
             </div>
           ))}
@@ -53,7 +56,7 @@ export function SimilarProperty() {
           label="Explore All Listings"
           size="small"
           variant="outlined"
-          className="mx-auto mt-10"
+          className="lg:mx-auto mt-10"
         />
       </div>
     </section>

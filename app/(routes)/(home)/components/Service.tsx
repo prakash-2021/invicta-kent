@@ -21,7 +21,7 @@ const services: ServiceItem[] = [
     title: "Find Your Next Home",
     description:
       "Browse a wide range of rental properties in Kent that suit your lifestyle and budget.",
-    href: "/tenants",
+    href: "/tenant",
   },
   {
     icon: <MdKey color="#172747" size={24} />,
@@ -29,7 +29,7 @@ const services: ServiceItem[] = [
     title: "Let with Ease",
     description:
       "From property marketing to tenant management, we help you rent out with confidence.",
-    href: "/landlords",
+    href: "/let",
   },
   {
     icon: <MdOutlineAccountBalance color="#172747" size={24} />,
@@ -37,21 +37,21 @@ const services: ServiceItem[] = [
     title: "Smarter Finance Options",
     description:
       "Get expert mortgage advice tailored to landlords and property owners.",
-    href: "/mortgages",
+    href: "/mortgage",
   },
 ];
 
 export const Service = () => {
   return (
-    <section className="ik-section-bottom bg-primary-dark-blue py-30">
+    <section className="ik-section-bottom bg-primary-dark-blue py-16 lg:py-30">
       <div className="ik-container">
         <div className="ik-misc--tagline text-white mb-3">Our Services</div>
 
-        <h2 className="ik-heading--h2 mb-20 text-white">
+        <h2 className="ik-heading--h2 mb-16 lg:mb-20 text-white">
           Tailored Solutions for <br /> Tenants & Landlords
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-30">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-30">
           {services.map((service, index) => (
             <div key={index}>
               <div className="w-12 h-12 flex items-center justify-center bg-offwhite rounded-md mb-8">

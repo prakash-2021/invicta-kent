@@ -8,12 +8,12 @@ export const Support = () => {
           Expert Support
         </div>
 
-        <h2 className="ik-heading--h2 mb-14 text-primary-dark-blue">
+        <h2 className="ik-heading--h2 mb-12 lg:mb-14 text-primary-dark-blue">
           Why Choose a Mortgage Advisor?
         </h2>
 
-        <div className="grid grid-cols-2 gap-16">
-          <div className="border border-border py-16 px-12 rounded-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="border border-border py-6 lg:py-16 px-4 lg:px-12 rounded-sm">
             <div className="w-12 h-12 rounded-sm bg-[#58C38F] flex items-center justify-center mb-12">
               <MdHandshake size={24} color="white" />
             </div>
@@ -55,7 +55,7 @@ export const Support = () => {
             </div>
           </div>
 
-          <div className="border border-border py-16 px-12 rounded-sm">
+          <div className="border border-border py-6 lg:py-16 px-4 lg:px-12 rounded-sm">
             <div className="w-12 h-12 rounded-sm bg-[#D43A20] flex items-center justify-center mb-12">
               <MdAccountBalance size={24} color="white" />
             </div>

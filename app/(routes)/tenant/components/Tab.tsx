@@ -21,8 +21,8 @@ const tabs = ["Securing Property", "Moving In", "Living There", "Moving Out"];
 
 const tabContent: Record<string, JSX.Element> = {
   "Securing Property": (
-    <div className="grid grid-cols-2 gap-16 p-12 bg-white-smoke rounded-xl">
-      <div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 p-4 lg:p-12 bg-white-smoke rounded-xl">
+      <div className="order-2 lg:order-1">
         <h4 className="ik-heading--h3 mb-3">
           Pre-Tenancy: Securing a Property
         </h4>
@@ -46,7 +46,7 @@ const tabContent: Record<string, JSX.Element> = {
                         <p className="ik-body--md--600 mb-0.5">
                           Identity and &apos;Right to Rent&apos; Checks
                         </p>
-                        <p>
+                        <p className="text-blue-gray ik-body--sm--400">
                           Photo ID and proof of legal right to rent in the UK
                         </p>
                       </div>
@@ -59,7 +59,7 @@ const tabContent: Record<string, JSX.Element> = {
 
                       <div>
                         <p className="ik-body--md--600 mb-0.5">Credit Check</p>
-                        <p>
+                        <p className="text-blue-gray ik-body--sm--400">
                           Assessment of credit history, CCJs, and bankruptcy
                           orders
                         </p>
@@ -75,7 +75,7 @@ const tabContent: Record<string, JSX.Element> = {
                         <p className="ik-body--md--600 mb-0.5">
                           Affordability Check
                         </p>
-                        <p>
+                        <p className="text-blue-gray ik-body--sm--400">
                           Income verification (typically 2.5x annual rent
                           required)
                         </p>
@@ -91,7 +91,9 @@ const tabContent: Record<string, JSX.Element> = {
                         <p className="ik-body--md--600 mb-0.5">
                           Previous Landlord Reference
                         </p>
-                        <p>History of rent payments and property maintenance</p>
+                        <p className="text-blue-gray ik-body--sm--400">
+                          History of rent payments and property maintenance
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -108,21 +110,26 @@ const tabContent: Record<string, JSX.Element> = {
                         <BiSolidErrorCircle color="#D43A20" size={20} />
                       </div>
 
-                      <p className="mb-4 text-blue-gray">
+                      <p className="mb-4 text-blue-gray ik-body--sm--400">
                         Under Tenant Fees Act 2019, agents cannot charge for:
                       </p>
 
-                      <ul className="space-y-3 mb-8 pl-2">
+                      <ul className="space-y-3 pl-2">
                         <li className="flex items-center gap-3">
                           <span className="w-0.5 h-0.5 rounded-full bg-primary-dark-blue" />
-                          <span>Safety checks</span>
+                          <span>Administration fees</span>
                         </li>
                         <li className="flex items-center gap-3">
                           <span className="w-0.5 h-0.5 rounded-full bg-primary-dark-blue" />
-                          <span>
-                            Advice on cost-effective improvements to enhance
-                            rental value
-                          </span>
+                          <span>Referencing costs</span>
+                        </li>
+                        <li className="flex items-center gap-3">
+                          <span className="w-0.5 h-0.5 rounded-full bg-primary-dark-blue" />
+                          <span>Credit checks</span>
+                        </li>
+                        <li className="flex items-center gap-3">
+                          <span className="w-0.5 h-0.5 rounded-full bg-primary-dark-blue" />
+                          <span>Inventory charges</span>
                         </li>
                       </ul>
                     </div>
@@ -133,11 +140,11 @@ const tabContent: Record<string, JSX.Element> = {
                         <BiSolidCheckCircle color="#58C38F" size={20} />
                       </div>
 
-                      <p className="mb-4 text-blue-gray">
+                      <p className="mb-4 text-blue-gray ik-body--sm--400">
                         Agents can only ask for:
                       </p>
 
-                      <ul className="space-y-3 mb-8 pl-2">
+                      <ul className="space-y-3 pl-2">
                         <li className="flex items-center gap-3">
                           <span className="w-0.5 h-0.5 rounded-full bg-primary-dark-blue" />
                           <span>Monthly rent payments</span>
@@ -158,7 +165,7 @@ const tabContent: Record<string, JSX.Element> = {
                         <p className="ik-body--md--600">Deposit Protection</p>
                       </div>
 
-                      <p className="text-blue-gray">
+                      <p className="text-blue-gray ik-body--sm--400">
                         Agents must protect your deposit in a
                         government-approved scheme within 30 days (TDS, DPS, or
                         MyDeposits)
@@ -172,7 +179,7 @@ const tabContent: Record<string, JSX.Element> = {
           />
         </div>
       </div>
-      <div>
+      <div className="order-1 lg:order-2">
         <figure className="ik-figure rounded-sm pt-[100%]">
           <Image
             alt=""
@@ -186,8 +193,8 @@ const tabContent: Record<string, JSX.Element> = {
     </div>
   ),
   "Moving In": (
-    <div className="grid grid-cols-2 gap-16 p-12 bg-white-smoke rounded-xl">
-      <div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 p-4 lg:p-12 bg-white-smoke rounded-xl">
+      <div className="order-2 lg:order-1">
         <div className="mb-3">
           <h2 className="ik-heading--h3 mb-3">
             Starting the Tenancy: The Move-In Process
@@ -203,7 +210,7 @@ const tabContent: Record<string, JSX.Element> = {
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Tenancy Agreement</p>
-            <p>
+            <p className="text-blue-gray ik-body--sm--400">
               The legally binding contract between you and the landlord. Must be
               fair and cannot override your statutory rights.
             </p>
@@ -217,13 +224,13 @@ const tabContent: Record<string, JSX.Element> = {
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Property Inventory</p>
-            <p>
+            <p className="text-blue-gray ik-body--sm--400">
               Detailed documentation of the property&apos;s condition at
               move-in, including written descriptions and photos.
             </p>
             <div className="p-3 border border-border rounded-sm mt-4">
               <p className="ik-misc--label">Important:</p>
-              <p>
+              <p className="text-blue-gray ik-body--sm--400">
                 You must review and sign this document. It&apos;s crucial
                 evidence for any end-of-tenancy deposit disputes.
               </p>
@@ -238,7 +245,9 @@ const tabContent: Record<string, JSX.Element> = {
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Essential Documents</p>
-            <p>You must receive these documents on moving in:</p>
+            <p className="text-blue-gray ik-body--sm--400">
+              You must receive these documents on moving in:
+            </p>
             <ul className="space-y-3 mt-3 pl-2">
               <li className="flex items-center gap-3">
                 <span className="w-0.5 h-0.5 rounded-full bg-primary-dark-blue" />
@@ -268,7 +277,7 @@ const tabContent: Record<string, JSX.Element> = {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="order-1 lg:order-2">
         <figure className="ik-figure rounded-sm pt-[100%]">
           <Image
             alt=""
@@ -282,8 +291,8 @@ const tabContent: Record<string, JSX.Element> = {
     </div>
   ),
   "Living There": (
-    <div className="grid grid-cols-2 gap-16 p-12 bg-white-smoke rounded-xl">
-      <div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 p-4 lg:p-12 bg-white-smoke rounded-xl">
+      <div className="order-2 lg:order-1">
         <div className="mb-3">
           <h2 className="ik-heading--h3 mb-3">
             During the Tenancy: Living in the Property
@@ -299,7 +308,7 @@ const tabContent: Record<string, JSX.Element> = {
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Rent Collection</p>
-            <p>
+            <p className="text-blue-gray ik-body--sm--400">
               The agent receives monthly rent payments and manages any arrears
               issues that may arise.
             </p>
@@ -313,7 +322,7 @@ const tabContent: Record<string, JSX.Element> = {
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Repairs and Maintenance</p>
-            <p>
+            <p className="text-blue-gray ik-body--sm--400">
               Your first point of contact for all repair issues. Landlords must
               maintain:
             </p>
@@ -337,7 +346,7 @@ const tabContent: Record<string, JSX.Element> = {
             </ul>
             <div className="p-3 border border-border rounded-sm mt-4">
               <p className="ik-misc--label">Response Times:</p>
-              <p>
+              <p className="text-blue-gray ik-body--sm--400">
                 While no set timelines exist, urgent health and safety issues
                 require prompt response. Delays may occur if landlord approval
                 is needed for expensive work.
@@ -353,10 +362,12 @@ const tabContent: Record<string, JSX.Element> = {
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Essential Documents</p>
-            <p>You must receive these documents on moving in:</p>
+            <p className="text-blue-gray ik-body--sm--400">
+              You must receive these documents on moving in:
+            </p>
             <div className="p-3 border border-border rounded-sm mt-4">
               <p className="ik-misc--label">Your Rights:</p>
-              <p>
+              <p className="text-blue-gray ik-body--sm--400">
                 Agents must provide at least 24 hours written notice before
                 visiting your property.
               </p>
@@ -364,7 +375,7 @@ const tabContent: Record<string, JSX.Element> = {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="order-1 lg:order-2">
         <figure className="ik-figure rounded-sm pt-[100%]">
           <Image
             alt=""
@@ -378,8 +389,8 @@ const tabContent: Record<string, JSX.Element> = {
     </div>
   ),
   "Moving Out": (
-    <div className="grid grid-cols-2 gap-16 p-12 bg-white-smoke rounded-xl">
-      <div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 p-4 lg:p-12 bg-white-smoke rounded-xl">
+      <div className="order-2 lg:order-1">
         <div className="mb-3">
           <h2 className="ik-heading--h3 mb-3">
             Ending the Tenancy: The Move-Out Process
@@ -395,7 +406,7 @@ const tabContent: Record<string, JSX.Element> = {
             </div>
 
             <p className="mb-0.5 ik-body--md--600">Check-Out Inspection</p>
-            <p>
+            <p className="text-blue-gray ik-body--sm--400">
               The agent conducts a final inspection, comparing the property
               condition to the original check-in inventory to identify any new
               issues.
@@ -412,7 +423,7 @@ const tabContent: Record<string, JSX.Element> = {
             <p className="mb-0.5 ik-body--md--600">
               Deposit Return & Deductions
             </p>
-            <p>
+            <p className="text-blue-gray ik-body--sm--400">
               The agent manages the return of your deposit based on the
               property&apos;s condition.
             </p>
@@ -434,7 +445,7 @@ const tabContent: Record<string, JSX.Element> = {
             </ul>
             <div className="p-3 border border-border rounded-sm mt-4">
               <p className="ik-misc--label">Your Rights:</p>
-              <p>
+              <p className="text-blue-gray ik-body--sm--400">
                 Any proposed deductions must be communicated in writing with
                 supporting evidence.
               </p>
@@ -442,7 +453,7 @@ const tabContent: Record<string, JSX.Element> = {
           </div>
         </div>
       </div>{" "}
-      <div>
+      <div className="order-1 lg:order-2">
         <figure className="ik-figure rounded-sm pt-[100%]">
           <Image
             alt=""
@@ -464,28 +475,40 @@ export const Tabs = () => {
     <section className="ik-section-bottom">
       <div className="ik-container">
         <div className="">
+          <div className="ik-misc--tagline text-primary-light-blue mb-3 lg:text-center">
+            Rental Journey
+          </div>
+          <h1 className="ik-heading--h2 mb-12 lg:mb-14 lg:text-center">
+            From Application to Move-Out
+          </h1>
           {/* Tabs Header */}
-          <div className="flex space-x-4 border-b border-gray-200 relative">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`relative w-1/4 py-3 ik-misc--button cursor-pointer`}
-              >
-                {tab}
-                {activeTab === tab && (
-                  <motion.div
-                    layoutId="underline"
-                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-600 rounded"
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-              </button>
-            ))}
+          <div className="">
+            <div className="flex space-x-4 border-b border-gray-200 relative overflow-x-auto whitespace-nowrap px-4 hide-scrollbar">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`relative px-4 py-3 ik-misc--button cursor-pointer whitespace-nowrap lg:w-1/4`}
+                >
+                  {tab}
+                  {activeTab === tab && (
+                    <motion.div
+                      layoutId="underline"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-600 rounded"
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Tab Content */}
-          <div className="mt-12">
+          <div className="mt-6 lg:mt-12">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}

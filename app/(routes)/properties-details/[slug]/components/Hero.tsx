@@ -5,10 +5,10 @@ import { BiDownload, BiMap } from "react-icons/bi";
 export const Hero = () => {
   return (
     <>
-      <section className="ik-section-top mb-20">
+      <section className="ik-section-top mb-16 lg:mb-20">
         <div className="ik-container">
-          <div className="grid grid-cols-12 gap-6 mb-20">
-            <div className="col-span-5 h-full flex flex-col justify-between bg-white-smoke p-6 rounded-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-20">
+            <div className="lg:col-span-5 h-full flex flex-col justify-between bg-white-smoke p-6 rounded-sm order-2 lg:order-1">
               <div>
                 <div>
                   <span className="px-3 py-1 bg-[#58C38F] ik-misc--label rounded-full mb-4 block w-fit">
@@ -49,7 +49,7 @@ export const Hero = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="mt-20 lg:mt-0">
                 <Button
                   size="small"
                   label="Request for more info"
@@ -59,9 +59,9 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="col-span-7">
+            <div className="lg:col-span-7 order-1 lg:order-2">
               <div>
-                <figure className="ik-figure rounded-sm pt-[75%] mb-6">
+                <figure className="ik-figure rounded-sm pt-[75%] mb-3 lg:mb-6">
                   <Image
                     alt=""
                     src={"https://picsum.photos/801/800"}
@@ -72,7 +72,7 @@ export const Hero = () => {
                 </figure>
               </div>
 
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-3 lg:gap-6">
                 <figure className="ik-figure rounded-sm pt-[66%] mb-5">
                   <Image
                     alt=""
@@ -106,8 +106,8 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-5">
               <h4 className="ik-heading--h4 mb-4">Description</h4>
               <p>
                 This modern 3-bedroom semi-detached home offers comfort,
@@ -117,7 +117,7 @@ export const Hero = () => {
               </p>
             </div>
 
-            <div className="col-span-6 col-start-7">
+            <div className="lg:col-span-6 lg:col-start-7">
               <div className="flex items-center justify-between h-13 border-t border-border">
                 <span className="ik-body--lg--500">Floor Plan</span>
                 <div className="flex gap-2">
@@ -171,9 +171,9 @@ export const Hero = () => {
 
       <section className="ik-section-bottom">
         <div className="ik-container">
-          <h3 className="mb-14 ik-heading--h4">Floor Plan</h3>
+          <h3 className="mb-4 lg:mb-14 ik-heading--h4">Floor Plan</h3>
 
-          <figure>
+          <figure className="max-w-2/3 mx-auto lg:max-w-none">
             <Image
               alt="floor plan"
               src={"/floor-plan.png"}

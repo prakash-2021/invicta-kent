@@ -5,8 +5,8 @@ import { MdPersonSearch } from "react-icons/md";
 
 export const Hero = () => {
   return (
-    <main className="ik-section-top mb-20">
-      <div className="ik-container ik-section-bottom">
+    <main className="ik-section-top ik-section-bottom">
+      <div className="ik-container mb-12 lg:mb-30">
         <div className="max-w-221 mx-auto text-center">
           <div className="ik-misc--tagline text-primary-light-blue mb-3">
             Tenant Guide – Renting Made Simple
@@ -14,24 +14,19 @@ export const Hero = () => {
           <h1 className="ik-heading--h2 mb-3">
             Step Into Your New Home with Ease
           </h1>
-          <p className="px-28 mb-7 ik-body--md--400 text-primary-dark-blue">
+          <p className="lg:px-28 mb-7 ik-body--md--400 text-primary-dark-blue">
             From application to moving in and beyond, we make the renting
             process transparent, fair, and stress-free. Here’s what you need to
             know.
           </p>
 
           <div className="flex justify-center gap-4">
-            <Button
-              label="View Listing"
-              size="small"
-              variant="filled-light-hover"
-            />
-            <Button label="Contact Us" size="small" variant="outlined" />
+            <Button label="View Listing" size="small" variant="filled" />
           </div>
         </div>
       </div>
 
-      <figure className="ik-figure rounded-sm pt-[57%] mb-20">
+      <figure className="ik-figure rounded-sm pt-[75%] lg:pt-[57%] mb-16 lg:mb-20">
         <Image
           alt=""
           src={"https://picsum.photos/2000/1400"}
@@ -42,7 +37,7 @@ export const Hero = () => {
       </figure>
 
       <div className="ik-container">
-        <div className="max-w-198 mx-auto text-center mb-20">
+        <div className="max-w-198 mx-auto lg:text-center mb-20">
           <h3 className="ik-heading--h3 mb-6">The Letting Agent’s Role</h3>
           <p className="mb-3">
             A letting agent is hired by a landlord to manage the rental of their
@@ -56,8 +51,8 @@ export const Hero = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-16">
-          <div className="px-12 py-16 border border-border">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="px-4 lg:px-12 py-6 lg:py-16 border border-border">
             <div className="w-12 h-12 flex items-center justify-center bg-offwhite rounded-md mb-8">
               <MdPersonSearch size={24} />
             </div>
@@ -72,7 +67,7 @@ export const Hero = () => {
             </p>
           </div>
 
-          <div className="px-12 py-16 border border-border">
+          <div className="px-4 lg:px-12 py-6 lg:py-16  border border-border">
             <div className="w-12 h-12 flex items-center justify-center bg-offwhite rounded-md mb-8">
               <BiSolidBriefcase size={24} />
             </div>

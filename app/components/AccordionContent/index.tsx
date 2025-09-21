@@ -3,7 +3,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode, useState } from "react";
-import { BiMinus, BiPlus } from "react-icons/bi";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 interface AccordionItem {
   title: string;
@@ -32,9 +32,9 @@ export const AccordionContent = ({ items }: AccordionProps) => {
           >
             <span className="ik-heading--h4">{item.title}</span>
             {activeIndex === index ? (
-              <BiMinus size={24} />
+              <BiChevronUp size={24} />
             ) : (
-              <BiPlus size={24} />
+              <BiChevronDown size={24} />
             )}
           </button>
 

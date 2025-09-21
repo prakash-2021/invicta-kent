@@ -8,12 +8,12 @@ export const Advisor = () => {
           Qualifications and Skills
         </div>
 
-        <h2 className="ik-heading--h2 mb-14 text-primary-dark-blue">
+        <h2 className="ik-heading--h2 mb-12 lg:mb-14 text-primary-dark-blue">
           A Mortgage Advisor
         </h2>
 
-        <div className="grid grid-cols-2 gap-16 bg-white-smoke p-12 rounded-xl items-center">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 bg-white-smoke p-4 lg:p-12 rounded-xl items-center">
+          <div className="order-2 lg:order-1">
             <h3 className="ik-heading--h3 mb-3">
               Industry Standard Qualification
             </h3>
@@ -44,7 +44,7 @@ export const Advisor = () => {
             </div>
           </div>
 
-          <div>
+          <div className="order-1 lg:order-2">
             <figure className="ik-figure rounded-sm pt-[100%]">
               <Image
                 alt=""

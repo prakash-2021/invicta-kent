@@ -1,3 +1,4 @@
+import { CTA } from "../(home)/components";
 import { Faq, Hero } from "./components";
 import { Tabs } from "./components/Tab";
 
@@ -9,6 +10,8 @@ const Tenant = () => {
       <Tabs />
 
       <Faq />
+
+      <CTA />
     </>
   );
 };

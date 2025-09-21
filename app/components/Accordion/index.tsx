@@ -4,6 +4,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { BiMinus, BiPlus } from "react-icons/bi";
+import { twMerge } from "tailwind-merge";
 
 interface AccordionItem {
   title: string;
@@ -24,7 +25,12 @@ export const Accordion = ({ items }: AccordionProps) => {
   return (
     <div className="w-full max-w-xl mx-auto text-white">
       {items.map((item, index) => (
-        <div key={index} className="border-b border-gray-700">
+        <div
+          key={index}
+          className={twMerge(
+            items.length === index + 1 ? "" : "border-b border-gray-700"
+          )}
+        >
           {/* Header */}
           <button
             onClick={() => toggle(index)}

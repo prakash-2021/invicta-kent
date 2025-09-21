@@ -10,8 +10,8 @@ export const Pricing = () => {
 
         <h2 className="ik-heading--h2 mb-14">Simple, Transparent Pricing</h2>
 
-        <div className="grid grid-cols-2 gap-16">
-          <div className="px-12 py-16 border border-border">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="px-4 lg:px-12 py-6 lg:py-16 border border-border">
             <div className="w-12 h-12 flex items-center justify-center bg-offwhite rounded-md mb-8">
               <BiSolidHome size={24} />
             </div>
@@ -52,7 +52,7 @@ export const Pricing = () => {
             </ul>
           </div>
 
-          <div className="px-12 py-16 border border-border">
+          <div className="px-4 lg:px-12 py-6 lg:py-16 border border-border">
             <div className="w-12 h-12 flex items-center justify-center bg-offwhite rounded-md mb-8">
               <BiKey size={28} />
             </div>
