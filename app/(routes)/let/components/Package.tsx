@@ -78,7 +78,7 @@ export const Package = () => {
             onClick={handleDownload}
           />
 
-          <Link href={"/contact"}>
+          <Link href={"/contact?type=let"}>
             <Button
               label="Contact Us"
               size="small"

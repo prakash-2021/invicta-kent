@@ -1,5 +1,6 @@
 import { Button } from "@/app/components";
 import Image from "next/image";
+import Link from "next/link";
 import { BiSolidBriefcase } from "react-icons/bi";
 import { MdPersonSearch } from "react-icons/md";
 
@@ -21,7 +22,9 @@ export const Hero = () => {
           </p>
 
           <div className="flex justify-center gap-4">
-            <Button label="View Listing" size="small" variant="filled" />
+            <Link href={"/properties"}>
+              <Button label="View Listing" size="small" variant="filled" />
+            </Link>
           </div>
         </div>
       </div>
@@ -57,7 +60,7 @@ export const Hero = () => {
               <MdPersonSearch size={24} />
             </div>
 
-            <h5 className="ik-heading--h4 mb-4">Initial Setup - £200</h5>
+            <h5 className="ik-heading--h4 mb-4">Let-Only/Tenant-Find</h5>
             <p>
               The agent&apos;s involvement is limited to the start of the
               tenancy. They market the property, conduct viewings, handle
@@ -72,7 +75,7 @@ export const Hero = () => {
               <BiSolidBriefcase size={24} />
             </div>
 
-            <h5 className="ik-heading--h4 mb-4">Initial Setup - £200</h5>
+            <h5 className="ik-heading--h4 mb-4">Fully Managed</h5>
             <p className="mb-3">
               The agent is the tenant&apos;s main point of contact for the
               entire tenancy. They handle everything from finding the tenant to

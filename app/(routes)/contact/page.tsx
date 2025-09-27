@@ -6,12 +6,35 @@ import {
   TextareaInput,
   TextInput,
 } from "@/app/components";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Contact = () => {
+  const searchParams = useSearchParams();
+  const type = searchParams.get("type");
+
+  const [subject, setSubject] = useState("General Enquiries");
+
+  useEffect(() => {
+    if (type) {
+      // Map query param to SelectInput values
+      const mapping: Record<string, string> = {
+        tenant: "Tenant Support",
+        let: "Landlord Services",
+        mortgage: "Mortgage Advice",
+        repair: "Repair & Maintenance",
+        general: "General Enquiries",
+      };
+
+      setSubject(mapping[type.toLowerCase()] || "General Enquiries");
+    }
+  }, [type]);
+
   return (
     <section className="ik-section-top mb-30">
       <div className="ik-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-6">
+          {/* Left content */}
           <div>
             <div className="ik-misc--tagline text-primary-light-blue mb-3">
               Contact us
@@ -36,6 +59,7 @@ const Contact = () => {
             </div>
           </div>
 
+          {/* Right form */}
           <div className="lg:pt-8">
             <div className="mb-8">
               <TextInput
@@ -52,7 +76,6 @@ const Contact = () => {
                   placeholder="example@email.com"
                   required
                 />
-
                 <TextInput
                   label="Phone"
                   placeholder="Your phone number"
@@ -62,21 +85,21 @@ const Contact = () => {
             </div>
 
             <div className="mb-8">
-              <div>
-                <SelectInput
-                  label="Subject"
-                  options={[
-                    { label: "General Enquiries", value: "General Enquiries" },
-                    { label: "Tenant Support", value: "Tenant Support" },
-                    { label: "Landlord Services", value: "Landlord Services" },
-                    { label: "Mortgage Advice", value: "Mortgage Advice" },
-                    {
-                      label: "Repair & Maintenance",
-                      value: "Repair & Maintenance",
-                    },
-                  ]}
-                />
-              </div>
+              <SelectInput
+                label="Subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                options={[
+                  { label: "General Enquiries", value: "General Enquiries" },
+                  { label: "Tenant Support", value: "Tenant Support" },
+                  { label: "Landlord Services", value: "Landlord Services" },
+                  { label: "Mortgage Advice", value: "Mortgage Advice" },
+                  {
+                    label: "Repair & Maintenance",
+                    value: "Repair & Maintenance",
+                  },
+                ]}
+              />
             </div>
 
             <div className="mb-8">

@@ -1,7 +1,10 @@
 import { Button, FeatureCard } from "@/app/components";
 import Link from "next/link";
+import { getProperties } from "../(home)/data/query";
 
-const Properties = () => {
+const Properties = async () => {
+  const { data } = await getProperties();
+
   return (
     <main className="ik-section-top ik-section-bottom">
       <section className="mb-20 lg:mb-30">
@@ -28,31 +31,32 @@ const Properties = () => {
         </div>
       </section>
 
-      <section>
-        <div className="ik-container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-y-16">
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-          </div>
+      {!!data.length && (
+        <section>
+          <div className="ik-container">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-y-16">
+              {data.map((item, index) => (
+                <FeatureCard
+                  key={index}
+                  id={item.documentId || ""}
+                  imageUrl={item.property_images[0]?.url || ""}
+                  beds={item.bedrooms}
+                  baths={item.bathrooms}
+                  title={item.title}
+                  address={item.location}
+                />
+              ))}
+            </div>
 
-          <Button
-            label="View More"
-            size="small"
-            variant="outlined"
-            className="lg:mx-auto mt-10 lg:mt-12"
-          />
-        </div>
-      </section>
+            <Button
+              label="View More"
+              size="small"
+              variant="outlined"
+              className="lg:mx-auto mt-10 lg:mt-12"
+            />
+          </div>
+        </section>
+      )}
     </main>
   );
 };

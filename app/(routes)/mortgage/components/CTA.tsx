@@ -12,7 +12,7 @@ export const CTA = () => {
           Expert advisors in Ashford compare deals and guide you every <br />{" "}
           step of the way.
         </p>
-        <Link href={"/mortgage"}>
+        <Link href={"/contact?type=mortgage"}>
           <Button
             label="Get Mortgage Advice"
             size="small"

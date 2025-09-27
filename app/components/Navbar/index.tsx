@@ -213,8 +213,7 @@ export const Navbar = () => {
   const nav = (
     <nav
       className={twMerge(
-        "w-full h-16 lg:h-20 flex items-center z-50 translate-y-0 fixed",
-        lastScrollY > 300 ? "bg-white" : "transparent"
+        "w-full h-16 lg:h-20 flex items-center z-50 translate-y-0 fixed bg-white"
       )}
       ref={ref}
     >
@@ -291,7 +290,10 @@ export const Navbar = () => {
                     Tenant Services
                   </Link>
 
-                  <Link href={"/contact"} className={NAV_ITEM_CLASS}>
+                  <Link
+                    href={"/contact?type=repair"}
+                    className={NAV_ITEM_CLASS}
+                  >
                     Report Maintenance
                   </Link>
                 </div>

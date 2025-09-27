@@ -12,7 +12,7 @@ export const CTA = () => {
           Whether you’re looking to rent, let, or get mortgage support, our team
           is here to help every step of the way.
         </p>
-        <Link href={"/contact"}>
+        <Link href={"/contact?type=tenant"}>
           <Button
             label="Contact us"
             size="small"

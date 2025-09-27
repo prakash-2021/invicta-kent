@@ -51,7 +51,7 @@ export const Faq = () => {
               Contact us directly — our team is here to help you with guidance,
               answers, and personalized support every step of the way.
             </p>
-            <Link href={"/contact"}>
+            <Link href={"/contact?type=tenant"}>
               <Button label="Contact Us" size="small" variant="outlined" />
             </Link>
           </div>

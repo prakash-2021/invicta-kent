@@ -1,10 +1,15 @@
 "use client";
 
+import { Property } from "@/app/(routes)/(home)/data/query";
 import { Button, FeatureCard } from "@/app/components";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 
-export function SimilarProperty() {
+interface FeatureProps {
+  data: Property[];
+}
+
+export function SimilarProperty({ data }: FeatureProps) {
   const [emblaRef] = useEmblaCarousel({ loop: false, align: "start" });
   const [containerOffset, setContainerOffset] = useState(0);
 
@@ -39,12 +44,20 @@ export function SimilarProperty() {
             paddingRight: containerOffset,
           }}
         >
-          {[1, 2, 3].map((_, i) => (
+          {data.slice(0, 3).map((item, index) => (
             <div
               className="min-w-[300px] lg:min-w-[384px] mr-8 lg:mr-6 flex-shrink-0"
-              key={i}
+              key={index}
             >
-              <FeatureCard />
+              <FeatureCard
+                key={index}
+                id={item.documentId || ""}
+                imageUrl={item.property_images[0]?.url || ""}
+                beds={item.bedrooms}
+                baths={item.bathrooms}
+                title={item.title}
+                address={item.location}
+              />
             </div>
           ))}
         </div>
