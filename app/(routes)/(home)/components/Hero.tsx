@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="ik-section-top ik-section-bottom h-[130vh] bg-[url(/homepage-bg.png)] bg-no-repeat bg-cover bg-[42%]">
+    <section className="ik-section-top h-[130vh] bg-[url(/homepage-bg.png)] bg-no-repeat bg-cover bg-[42%]">
       <div className="ik-container">
         <div className="max-w-221 lg:mx-auto lg:text-center">
           <h1 className="ik-heading--h1 mb-4 text-balance">

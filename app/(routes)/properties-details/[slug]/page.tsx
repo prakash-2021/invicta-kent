@@ -9,8 +9,13 @@ export const revalidate = 5;
 
 const PropertiesDetails = async ({ params }: PageProps) => {
   const { slug } = await params;
-  const { data } = await getProperties();
-  const { data: details } = await getPropertiesDetail(slug);
+  const [propertiesRes, detailsRes] = await Promise.all([
+    getProperties(),
+    getPropertiesDetail(slug),
+  ]);
+
+  const { data } = propertiesRes;
+  const { data: details } = detailsRes;
 
   return (
     <>

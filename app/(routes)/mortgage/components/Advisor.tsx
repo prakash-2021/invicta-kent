@@ -48,7 +48,7 @@ export const Advisor = () => {
             <figure className="ik-figure rounded-sm pt-[100%]">
               <Image
                 alt=""
-                src={"https://picsum.photos/700/700"}
+                src={"/mortgage-advisor.jpg"}
                 width={900}
                 height={900}
                 className="ik-image"

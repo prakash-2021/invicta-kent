@@ -2,6 +2,8 @@ import { Button, FeatureCard } from "@/app/components";
 import Link from "next/link";
 import { getProperties } from "../(home)/data/query";
 
+export const revalidate = 5;
+
 const Properties = async () => {
   const { data } = await getProperties();
 

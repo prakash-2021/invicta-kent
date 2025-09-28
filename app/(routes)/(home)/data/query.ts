@@ -23,6 +23,7 @@ export interface Property {
   documentId: string;
   title: string;
   location: string;
+  google_map_location: string;
   description: string;
   monthly_price: string;
   deposit_price: string;

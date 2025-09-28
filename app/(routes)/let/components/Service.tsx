@@ -29,7 +29,7 @@ export const Service = () => {
             <figure className="ik-figure rounded-sm pt-[100%]">
               <Image
                 alt=""
-                src={"https://picsum.photos/1000/1000"}
+                src={"/let-service.jpg"}
                 width={800}
                 height={900}
                 className="ik-image"

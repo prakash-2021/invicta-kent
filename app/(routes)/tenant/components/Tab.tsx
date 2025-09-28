@@ -176,7 +176,7 @@ const tabContent: Record<string, JSX.Element> = {
         <figure className="ik-figure rounded-sm pt-[100%]">
           <Image
             alt=""
-            src={"https://picsum.photos/802/800"}
+            src={"/tenant-tab1.jpg"}
             width={600}
             height={600}
             className="ik-image"
@@ -274,7 +274,7 @@ const tabContent: Record<string, JSX.Element> = {
         <figure className="ik-figure rounded-sm pt-[100%]">
           <Image
             alt=""
-            src={"https://picsum.photos/802/800"}
+            src={"/tenant-tab2.jpg"}
             width={600}
             height={600}
             className="ik-image"
@@ -373,7 +373,7 @@ const tabContent: Record<string, JSX.Element> = {
         <figure className="ik-figure rounded-sm pt-[100%]">
           <Image
             alt=""
-            src={"https://picsum.photos/802/800"}
+            src={"/tenant-tab3.jpg"}
             width={600}
             height={600}
             className="ik-image"
@@ -451,7 +451,7 @@ const tabContent: Record<string, JSX.Element> = {
         <figure className="ik-figure rounded-sm pt-[100%]">
           <Image
             alt=""
-            src={"https://picsum.photos/802/800"}
+            src={"/tenant-tab4.jpg"}
             width={600}
             height={600}
             className="ik-image"

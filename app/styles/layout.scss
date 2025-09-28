@@ -55,6 +55,14 @@
       margin-bottom: rem(160);
     }
   }
+
+  &-section-top-bottom {
+    margin-top: rem(64);
+
+    @media (min-width: 1440px) {
+      margin-top: rem(160);
+    }
+  }
 }
 
 // Figure wrapper for media (image/video) with hidden overflow

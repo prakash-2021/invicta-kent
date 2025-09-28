@@ -29,12 +29,18 @@ export const Hero = ({ data }: Props) => {
 
                 {/* Location */}
                 {data?.location && (
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-8 h-8 rounded-full bg-white flex justify-center items-center">
-                      <BiMap color="#5790E1" size={16} />
+                  <Link
+                    href={data.google_map_location}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="flex items-center gap-3 mb-8">
+                      <div className="w-8 h-8 rounded-full bg-white flex justify-center items-center">
+                        <BiMap color="#5790E1" size={16} />
+                      </div>
+                      <div className="ik-body--md">{data.location}</div>
                     </div>
-                    <div className="ik-body--md">{data.location}</div>
-                  </div>
+                  </Link>
                 )}
 
                 {/* Price */}

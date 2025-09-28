@@ -18,7 +18,7 @@ export const Hero = () => {
       <figure className="ik-figure rounded-sm pt-[75%] lg:pt-[55%]">
         <Image
           alt=""
-          src={"https://picsum.photos/2001/1400"}
+          src={"/company-cover.jpg"}
           width={2000}
           height={1400}
           className="ik-image"

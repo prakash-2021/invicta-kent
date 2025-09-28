@@ -1,4 +1,4 @@
-import { BiPlus } from "react-icons/bi";
+import { MdForum, MdSchool, MdShield } from "react-icons/md";
 
 export const Principle = () => {
   return (
@@ -12,7 +12,7 @@ export const Principle = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-20">
           <div className="bg-white-smoke rounded-sm p-8 h-86 flex flex-col justify-between">
-            <BiPlus size={24} />
+            <MdShield size={24} />
 
             <div>
               <h3 className="ik-heading--h4 mb-6">Integrity</h3>
@@ -24,7 +24,7 @@ export const Principle = () => {
           </div>
 
           <div className="bg-white-smoke rounded-sm p-8 h-86 flex flex-col justify-between">
-            <BiPlus size={24} />
+            <MdSchool size={24} />
 
             <div>
               <h3 className="ik-heading--h4 mb-6">Expertise</h3>
@@ -36,7 +36,7 @@ export const Principle = () => {
           </div>
 
           <div className="bg-white-smoke rounded-sm p-8 h-86 flex flex-col justify-between">
-            <BiPlus size={24} />
+            <MdForum size={24} />
 
             <div>
               <h3 className="ik-heading--h4 mb-6">Responsiveness</h3>

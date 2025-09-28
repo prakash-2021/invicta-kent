@@ -14,7 +14,7 @@ export const Feature = ({ data }: FeatureProps) => {
   const visibleData = isDesktop ? data.slice(0, 6) : data.slice(0, 3);
 
   return (
-    <section className="ik-section-bottom">
+    <section className="ik-section-bottom ik-section-top-bottom">
       <div className="ik-container">
         <div className="ik-misc--tagline text-primary-light-blue mb-3">
           Featured Listings
