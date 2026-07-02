@@ -68,8 +68,13 @@ export const getProperties = async () => {
 };
 
 export const getPropertiesDetail = async (id: string) => {
-  const { data } = await instance.get<PropertyDetailResponse>(
-    `/properties/${id}`
-  );
-  return data as PropertyDetailResponse;
+  try {
+    const { data } = await instance.get<PropertyDetailResponse>(
+      `/properties/${id}`
+    );
+    return data as PropertyDetailResponse;
+  } catch (error) {
+    console.error(`Failed to fetch property detail for ${id}:`, error);
+    return { data: {} as Property } as PropertyDetailResponse;
+  }
 };
