@@ -14,6 +14,12 @@ const Contact = () => {
   const type = searchParams.get("type");
 
   const [subject, setSubject] = useState("General Enquiries");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
   useEffect(() => {
     if (type) {
@@ -29,6 +35,41 @@ const Contact = () => {
       setSubject(mapping[type.toLowerCase()] || "General Enquiries");
     }
   }, [type]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!fullName || !email || !phone || !message) {
+      setStatus({ type: "error", message: "Please fill in all required fields." });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setStatus(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fullName, email, phone, subject, message }),
+      });
+
+      if (response.ok) {
+        setStatus({ type: "success", message: "Your message has been sent successfully!" });
+        setFullName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      } else {
+        const data = await response.json();
+        setStatus({ type: "error", message: data.error || "Failed to send message. Please try again." });
+      }
+    } catch (error) {
+      setStatus({ type: "error", message: "An error occurred. Please try again later." });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="ik-section-top mb-30">
@@ -60,12 +101,19 @@ const Contact = () => {
           </div>
 
           {/* Right form */}
-          <div className="lg:pt-8">
+          <form className="lg:pt-8" onSubmit={handleSubmit}>
+            {status && (
+              <div className={`p-4 mb-6 rounded-md ${status.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
+                {status.message}
+              </div>
+            )}
             <div className="mb-8">
               <TextInput
                 label="Full name"
                 placeholder="Enter your full name"
                 required
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
               />
             </div>
 
@@ -74,12 +122,17 @@ const Contact = () => {
                 <TextInput
                   label="Email"
                   placeholder="example@email.com"
+                  type="email"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <TextInput
                   label="Phone"
                   placeholder="Your phone number"
                   required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
             </div>
@@ -107,11 +160,19 @@ const Contact = () => {
                 label="How can we help you?"
                 placeholder="Type your message"
                 required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </div>
 
-            <Button label="Submit" size="small" variant="filled" />
-          </div>
+            <Button
+              label={isSubmitting ? "Submitting..." : "Submit"}
+              size="small"
+              variant="filled"
+              disabled={isSubmitting}
+              type="submit"
+            />
+          </form>
         </div>
       </div>
     </section>
@@ -119,3 +180,4 @@ const Contact = () => {
 };
 
 export default Contact;
+// sanketshrestha1010@gmail.com
