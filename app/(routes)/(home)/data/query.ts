@@ -58,8 +58,13 @@ export interface PropertyDetailResponse {
 }
 
 export const getProperties = async () => {
-  const { data } = await instance.get<PropertyResponse>(`/properties`);
-  return data as PropertyResponse;
+  try {
+    const { data } = await instance.get<PropertyResponse>(`/properties`);
+    return data as PropertyResponse;
+  } catch (error) {
+    console.error("Failed to fetch properties:", error);
+    return { data: [], meta: { pagination: { page: 1, pageSize: 10, pageCount: 0, total: 0 } } } as PropertyResponse;
+  }
 };
 
 export const getPropertiesDetail = async (id: string) => {
